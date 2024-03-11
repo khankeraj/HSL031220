@@ -4647,7 +4647,7 @@
 		<action name="newRentalTypeMaster"
 			class="com.master.action.NewRentalTypeMasterAction"
 			method="rentalType">
-			<result name="success">/master/NewCityMaster.jsp</result>
+			<result name="success">/master/insertCityMaster.jsp</result>
 			<result name="fail">/fail.jsp</result>
 		</action>
 
@@ -4662,7 +4662,7 @@
 		<action name="AddNewRentalTypeMaster"
 			class="com.master.action.NewRentalTypeMasterAction"
 			method="insert_city_details">
-			<result name="success">/success.jsp</result>
+			<result name="success">insertCityMaster.jsp</result>
 			<result name="already">/already.jsp</result>
 			<result name="fail">/fail.jsp</result>
 		</action>

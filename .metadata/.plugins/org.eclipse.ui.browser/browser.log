@@ -1,0 +1,33 @@
+
+Mar 10, 2024 18:15:30.76 NEW SESSION
+Mar 10, 2024 18:15:30.77 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+Mar 10, 2024 18:18:20.46 [2804:14856:0310/181820.462:ERROR:connection_factory_impl.cc(478)] ConnectionHandler failed with net error: -2
+Mar 10, 2024 18:18:21.03 [2804:13420:0310/181821.031:ERROR:device_event_log_impl.cc(192)] [18:18:21.031] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+Mar 10, 2024 18:18:22.50 [2804:14856:0310/181822.500:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+Mar 10, 2024 18:18:23.01 [2804:14856:0310/181823.013:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+Mar 10, 2024 18:19:13.30 [2804:14856:0310/181913.301:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+Mar 10, 2024 18:20:49.46 [2804:14856:0310/182049.464:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+Mar 10, 2024 18:24:09.35 [2804:14856:0310/182409.357:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+Mar 10, 2024 18:30:30.30 [2804:11588:0310/183030.303:ERROR:get_updates_processor.cc(263)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_INTERNET_DISCONNECTED)
+Mar 10, 2024 18:31:02.83 [2804:14856:0310/183102.838:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+Mar 10, 2024 18:31:45.31 [2804:11588:0310/183145.313:ERROR:get_updates_processor.cc(263)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_INTERNET_DISCONNECTED)
+Mar 10, 2024 18:34:52.83 [2804:11588:0310/183452.830:ERROR:get_updates_processor.cc(263)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_INTERNET_DISCONNECTED)
+Mar 10, 2024 18:39:34.09 [2804:11588:0310/183934.090:ERROR:get_updates_processor.cc(263)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_INTERNET_DISCONNECTED)
+Mar 10, 2024 18:41:02.85 [2804:14856:0310/184102.853:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+Mar 10, 2024 18:46:35.98 [2804:11588:0310/184635.983:ERROR:get_updates_processor.cc(263)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_INTERNET_DISCONNECTED)
+Mar 10, 2024 18:51:02.86 [2804:14856:0310/185102.862:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+Mar 10, 2024 19:54:02.84 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+Mar 10, 2024 19:55:48.98 [12516:7268:0310/195548.987:ERROR:connection_factory_impl.cc(478)] ConnectionHandler failed with net error: -2
+Mar 11, 2024 10:31:10.19 [12516:7268:0311/103110.197:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 11, 2024 10:31:10.29 [12516:14772:0311/103110.294:ERROR:get_updates_processor.cc(263)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_INTERNET_DISCONNECTED)
+Mar 11, 2024 10:31:34.93 [12516:7268:0311/103134.938:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+Mar 11, 2024 11:01:38.48 [12516:7268:0311/110138.476:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+Mar 11, 2024 11:02:22.32 [12516:7268:0311/110222.320:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 11, 2024 11:02:23.30 [12516:15344:0311/110223.308:ERROR:device_event_log_impl.cc(192)] [11:02:23.307] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+Mar 11, 2024 11:02:24.78 [12516:7268:0311/110224.780:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+Mar 11, 2024 11:02:34.34 [12516:7268:0311/110234.349:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 11, 2024 11:02:50.94 [12516:7268:0311/110250.947:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 11, 2024 11:03:07.04 [12516:7268:0311/110307.048:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+Mar 11, 2024 11:04:02.52 [12516:7268:0311/110402.526:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 11, 2024 11:04:31.44 [12516:7268:0311/110431.444:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 11, 2024 11:04:48.74 [12516:7268:0311/110448.743:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106

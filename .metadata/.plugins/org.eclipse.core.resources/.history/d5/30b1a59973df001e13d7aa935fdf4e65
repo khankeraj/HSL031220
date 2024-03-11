@@ -1,0 +1,122 @@
+package com.master.action;
+
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts2.ServletActionContext;
+
+import com.login.loginModel.userinfo;
+import com.master.Constants.Constants;
+import com.master.dao.CityMasterDao;
+import com.master.dao.DesignationMasterDao;
+import com.master.dao.EmployeeMasterDAO;
+import com.master.model.CityModel;
+import com.master.model.DriverModel;
+import com.master.model.EmployeeMasterModel;
+import com.master.model.RentalTypeModel;
+import com.master.model.VehicleModel;
+import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
+
+public class NewRentalTypeMasterAction extends ActionSupport implements ModelDriven {
+
+	private EmployeeMasterModel employeeModel = new EmployeeMasterModel();
+
+	private DriverModel drivermodel = new DriverModel();
+	private VehicleModel vehiclemodel = new VehicleModel();
+
+	public VehicleModel getVehiclemodel() {
+		return vehiclemodel;
+	}
+
+	public void setVehiclemodel(VehicleModel vehiclemodel) {
+		this.vehiclemodel = vehiclemodel;
+	}
+
+	public DriverModel getDrivermodel() {
+		return drivermodel;
+	}
+
+	public void setDrivermodel(DriverModel drivermodel) {
+		this.drivermodel = drivermodel;
+	}
+
+	private List<EmployeeMasterModel> fetchEmployeeDetails;
+
+	public EmployeeMasterModel getEmployeeModel() {
+		return employeeModel;
+	}
+
+	public void setEmployeeModel(EmployeeMasterModel employeeModel) {
+		this.employeeModel = employeeModel;
+	}
+
+	public List<EmployeeMasterModel> getFetchEmployeeDetails() {
+		return fetchEmployeeDetails;
+	}
+
+	public void setFetchEmployeeDetails(List<EmployeeMasterModel> fetchEmployeeDetails) {
+		this.fetchEmployeeDetails = fetchEmployeeDetails;
+	}
+	private RentalTypeModel rentalType = new RentalTypeModel();
+	public String insert_employee_details() {
+		String response;
+		int i = 0;
+		try {
+			i = new EmployeeMasterDAO().insert_employee_Details(employeeModel);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		System.out.println("i in action :" + i);
+
+		if (i == -1) {
+			return "already";
+		}
+
+		if (i > 0) {
+			response = "success";
+		} else {
+			response = "fail";
+		}
+		return response;
+	}
+
+	
+
+	public String insertRental_type() {
+
+		HttpServletRequest request = ServletActionContext.getRequest();
+
+		String response;
+		int i = 0;
+		try {
+			i = new CityMasterDao().insert_city_Details(rentalType);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		System.out.println("i in action :" + i);
+
+		if (i > 0) {
+			response = "success";
+		} else if (i == -1) {
+			response = "already";
+		} else {
+			response = "fail";
+		}
+		return response;
+	}
+
+	
+
+	@Override
+	public Object getModel() {
+		// TODO Auto-generated method stub
+		return employeeModel;
+	}
+
+}
