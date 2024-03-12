@@ -1,0 +1,30 @@
+package com.master.model;
+
+public class RentalTypeModel {
+
+	private String rental_type;
+	private String description;
+	private String rentalType_id;
+	
+	
+	public String getRental_type() {
+		return rental_type;
+	}
+	public void setRental_type(String rental_type) {
+		this.rental_type = rental_type;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public String getRentalTpe_id() {
+		return rentalType_id;
+	}
+	public void setRentalTpe_id(String rentalTpe_id) {
+		this.rentalType_id = rentalTpe_id;
+	}
+
+	
+}

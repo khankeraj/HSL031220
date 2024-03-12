@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.master.model.RentalTypeModel"/>
     <fullyQualifiedTypeName name="freemarker.core.ReturnInstruction.Return"/>
     <fullyQualifiedTypeName name="com.master.action.RentalTypeMasterAction"/>
+    <fullyQualifiedTypeName name="com.master.model.CityModel"/>
+    <fullyQualifiedTypeName name="com.master.dao.RentalTypeMasterDao"/>
+    <fullyQualifiedTypeName name="com.master.model.RentalTypeModel"/>
 </qualifiedTypeNameHistroy>
