@@ -1,0 +1,71 @@
+package com.master.action;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts2.ServletActionContext;
+
+import com.login.loginModel.userinfo;
+import com.master.Constants.Constants;
+import com.master.dao.CityMasterDao;
+import com.master.dao.CopyCustomerMasterDAO;
+import com.master.dao.CustomerMasterDAO;
+import com.master.dao.DesignationMasterDao;
+import com.master.dao.DriverMasterDao;
+import com.master.dao.EmployeeMasterDAO;
+import com.master.dao.ProductMasterDao;
+import com.master.dao.TransporterMasterDao;
+import com.master.dao.VehicleMasterDao;
+import com.master.model.CityModel;
+import com.master.model.CustomerMasterModel;
+import com.master.model.DesignationModel;
+import com.master.model.DriverModel;
+import com.master.model.EmployeeMasterModel;
+import com.master.model.ProductModel;
+import com.master.model.RentalTypeModel;
+import com.master.model.TransporterModel;
+import com.master.model.VehicleModel;
+import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
+
+public class CopyCustomerMasterAction extends ActionSupport implements ModelDriven {
+
+	private RentalTypeModel rentalTypeModel = new RentalTypeModel();
+
+	public String fetchRentalDetail() {
+		String response;
+		HttpServletRequest request = ServletActionContext.getRequest();
+		String rentalTypeModel = request.getParameter("rentalTypeModel");
+
+		String rental = new CopyCustomerMasterDAO().fetchRentalDetail(rentalTypeModel, rentalTypeModel);
+		System.out.println("rentalTypeModel:" + rentalTypeModel);
+		return "success";
+	}
+
+	public String insertRentalDetail() {
+		String response;
+		HttpServletRequest request = ServletActionContext.getRequest();
+		int i = new CopyCustomerMasterDAO().insertRentalDetail(rentalTypeModel);
+		if (i > 0) {
+			response = "success";
+		} else if (i == -1) {
+			response = "already";
+		} else {
+			response = "fail";
+		}
+
+		return response;
+	}
+
+	@Override
+	public Object getModel() {
+		// TODO Auto-generated method stub
+		return rentalTypeModel;
+	}
+
+}

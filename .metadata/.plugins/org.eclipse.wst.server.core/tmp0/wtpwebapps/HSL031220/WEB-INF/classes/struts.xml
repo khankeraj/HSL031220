@@ -4643,12 +4643,17 @@
 			<result name="fail">/fail.jsp</result>
 		</action>
 
+		<!-- <action name="newRentalTypeMaster" class="com.master.action.NewRentalTypeMasterAction" 
+			method="rentalType"> <result name="success">/master/RentalType.jsp</result> 
+			<result name="fail">/fail.jsp</result> </action> -->
+
 		<action name="newRentalTypeMaster"
 			class="com.master.action.NewRentalTypeMasterAction"
-			method="insertRental_type">
+			method="rentalType">
 			<result name="success">/master/RentalType.jsp</result>
 			<result name="fail">/fail.jsp</result>
 		</action>
+
 
 		<action name="Add_New_City"
 			class="com.master.action.CityMasterAction"
@@ -4658,6 +4663,15 @@
 			<result name="fail">/fail.jsp</result>
 		</action>
 
+
+		<action name="CopyCustomerMasterAction"
+			class="com.master.action.CopyCustomerMasterAction"
+			method="fetchRentalDetail">
+			<result name="success">/master/CopyRentalType.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
 		<action name="AddNewRentalTypeMaster"
 			class="com.master.action.NewRentalTypeMasterAction"
 			method="insertRental_type">
@@ -4665,6 +4679,14 @@
 			<result name="already">/already.jsp</result>
 			<result name="fail">/fail.jsp</result>
 		</action>
+
+		<action name="city_master_Reports"
+			class="com.master.action.CustomerMasterAction"
+			method="fetchCityMasterDetails">
+			<result name="success">/master/city_master_reports.jsp</result>
+			<result name="fail">/master/city_master_reports.jsp</result>
+		</action>
+
 
 
 		<!--new transporter invoice modul End -->
