@@ -31,3 +31,26 @@ Mar 11, 2024 11:03:07.04 [12516:7268:0311/110307.048:ERROR:connection_factory_im
 Mar 11, 2024 11:04:02.52 [12516:7268:0311/110402.526:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
 Mar 11, 2024 11:04:31.44 [12516:7268:0311/110431.444:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
 Mar 11, 2024 11:04:48.74 [12516:7268:0311/110448.743:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+
+Mar 14, 2024 10:22:34.47 NEW SESSION
+Mar 14, 2024 10:22:34.51 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+Mar 14, 2024 12:10:08.19 [2632:11684:0314/121008.174:ERROR:connection_factory_impl.cc(478)] ConnectionHandler failed with net error: -2
+Mar 14, 2024 12:29:30.85 [2632:11684:0314/122930.851:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 14, 2024 12:59:55.36 [2632:13780:0314/125955.354:ERROR:cert_issuer_source_aia.cc(136)] AiaRequest::OnFetchCompleted got error -7
+Mar 14, 2024 12:59:55.40 [2632:13780:0314/125955.355:ERROR:cert_verify_proc_builtin.cc(874)] CertVerifyProcBuiltin for sync.richaudience.com failed:
+Mar 14, 2024 12:59:55.41 ----- Certificate i=0 (CN=*.richaudience.com) -----
+Mar 14, 2024 12:59:55.41 ERROR: No matching issuer found
+Mar 14, 2024 12:59:55.42 
+Mar 14, 2024 12:59:55.42 
+Mar 14, 2024 13:45:08.41 [2632:11684:0314/134508.409:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+Mar 14, 2024 13:57:43.50 [2632:11684:0314/135743.500:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+Mar 14, 2024 13:58:06.23 [2632:11684:0314/135806.239:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+Mar 14, 2024 13:58:56.04 [2632:11684:0314/135856.040:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+Mar 14, 2024 14:03:53.81 [2632:11684:0314/140353.812:ERROR:connection_factory_impl.cc(478)] ConnectionHandler failed with net error: -2
+Mar 14, 2024 16:15:55.61 [2632:11684:0314/161555.612:ERROR:connection_factory_impl.cc(478)] ConnectionHandler failed with net error: -2
+Mar 14, 2024 16:19:26.75 [2632:11684:0314/161926.754:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+Mar 14, 2024 16:19:49.61 [2632:11684:0314/161949.619:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 14, 2024 16:19:57.52 [2632:11684:0314/161957.520:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Mar 14, 2024 16:19:57.99 [2632:13508:0314/161957.995:ERROR:device_event_log_impl.cc(192)] [16:19:57.993] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+Mar 14, 2024 16:19:59.52 [2632:11684:0314/161959.528:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+Mar 14, 2024 16:36:51.79 [2632:11684:0314/163651.742:ERROR:connection_factory_impl.cc(478)] ConnectionHandler failed with net error: -2

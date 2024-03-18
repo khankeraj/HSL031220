@@ -2,7 +2,10 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="freemarker.core.ReturnInstruction.Return"/>
     <fullyQualifiedTypeName name="com.master.action.RentalTypeMasterAction"/>
-    <fullyQualifiedTypeName name="com.master.model.CityModel"/>
     <fullyQualifiedTypeName name="com.master.dao.RentalTypeMasterDao"/>
+    <fullyQualifiedTypeName name="com.master.dao.CopyCustomerMasterDAO"/>
     <fullyQualifiedTypeName name="com.master.model.RentalTypeModel"/>
+    <fullyQualifiedTypeName name="com.master.model.CityModel"/>
+    <fullyQualifiedTypeName name="com.master.model.EmployeeMasterModel"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>

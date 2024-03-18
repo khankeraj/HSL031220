@@ -7,6 +7,7 @@
 	<item key="CallHierarchyViewPart.ratio3" value="500"/>
 	<item key="CallHierarchyViewPart.orientation" value="3"/>
 	<item key="CallHierarchyViewPart.ratio0" value="500"/>
+	<item key="CallHierarchyViewPart.ratio1" value="500"/>
 	<section name="JavaElementSearchActions">
 	</section>
 	<section name="BuildPathsPropertyPage">
@@ -23,8 +24,8 @@
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 	</section>
 	<section name="completion_proposal_size">
-		<item key="size.x" value="324"/>
-		<item key="size.y" value="202"/>
+		<item key="size.x" value="229"/>
+		<item key="size.y" value="269"/>
 	</section>
 	<section name="quick_assist_proposal_size">
 	</section>
@@ -73,8 +74,20 @@
 	<section name="JavaSearchPage">
 		<item key="CASE_SENSITIVE" value="true"/>
 		<item key="INCLUDE_MASK" value="15"/>
-		<item key="HISTORY_SIZE" value="8"/>
+		<item key="HISTORY_SIZE" value="9"/>
 		<section name="HISTORY0">
+			<item key="searchFor" value="0"/>
+			<item key="scope" value="0"/>
+			<item key="pattern" value="CityMaster"/>
+			<item key="limitTo" value="2"/>
+			<item key="matchLocations" value="0"/>
+			<item key="javaElement" value=""/>
+			<item key="isCaseSensitive" value="true"/>
+			<item key="includeMask" value="15"/>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY1">
 			<item key="searchFor" value="12"/>
 			<item key="scope" value="0"/>
 			<item key="pattern" value="rentalTypeModel"/>
@@ -86,7 +99,7 @@
 			<list key="workingSets">
 			</list>
 		</section>
-		<section name="HISTORY1">
+		<section name="HISTORY2">
 			<item key="searchFor" value="0"/>
 			<item key="scope" value="0"/>
 			<item key="pattern" value="rental_type"/>
@@ -98,7 +111,7 @@
 			<list key="workingSets">
 			</list>
 		</section>
-		<section name="HISTORY2">
+		<section name="HISTORY3">
 			<item key="searchFor" value="1"/>
 			<item key="scope" value="0"/>
 			<item key="pattern" value="rentalType"/>
@@ -110,7 +123,7 @@
 			<list key="workingSets">
 			</list>
 		</section>
-		<section name="HISTORY3">
+		<section name="HISTORY4">
 			<item key="searchFor" value="0"/>
 			<item key="scope" value="0"/>
 			<item key="pattern" value="insert_city_Details"/>
@@ -122,7 +135,7 @@
 			<list key="workingSets">
 			</list>
 		</section>
-		<section name="HISTORY4">
+		<section name="HISTORY5">
 			<item key="searchFor" value="1"/>
 			<item key="scope" value="0"/>
 			<item key="pattern" value="RentalTypeModel"/>
@@ -134,7 +147,7 @@
 			<list key="workingSets">
 			</list>
 		</section>
-		<section name="HISTORY5">
+		<section name="HISTORY6">
 			<item key="searchFor" value="1"/>
 			<item key="scope" value="0"/>
 			<item key="pattern" value="public static void main"/>
@@ -146,7 +159,7 @@
 			<list key="workingSets">
 			</list>
 		</section>
-		<section name="HISTORY6">
+		<section name="HISTORY7">
 			<item key="searchFor" value="4"/>
 			<item key="scope" value="0"/>
 			<item key="pattern" value="citymodel"/>
@@ -158,7 +171,7 @@
 			<list key="workingSets">
 			</list>
 		</section>
-		<section name="HISTORY7">
+		<section name="HISTORY8">
 			<item key="searchFor" value="0"/>
 			<item key="scope" value="0"/>
 			<item key="pattern" value="cityjjjj"/>
@@ -181,6 +194,7 @@
 	</section>
 	<section name="OptionalMessageDialog.hide.">
 		<item key="org.eclipse.jdt.ui.typecomment.deprecated" value="true"/>
+		<item key="configure_problem_severity_dialog_id" value="false"/>
 	</section>
 	<section name="NewClassWizardPage">
 		<item key="create_constructor" value="false"/>

@@ -1,0 +1,75 @@
+package com.master.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.DB.DBConnection;
+import com.master.model.CustomerMasterModel;
+import com.master.model.RentalTypeModel;
+
+public class CopyCustomerMasterDAO {
+
+	DBConnection connection = new DBConnection();
+	Connection conn = connection.getConnection();
+
+	public String fetchRentalDetail(String name) {
+
+		String response = "";
+		try {
+
+			PreparedStatement preparedStatement1 = conn
+					.prepareStatement("select * from rentalTypeModel where description=?");
+
+			preparedStatement1.setString(1, name);
+
+			System.out.println("SQL:" + preparedStatement1);
+
+			ResultSet resultSet1 = preparedStatement1.executeQuery();
+
+			if (resultSet1.next()) {
+
+				response = resultSet1.getString("description") + "~" + resultSet1.getString("description");
+
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+		DBConnection.closeConnection();
+		return response;
+	}
+
+	public int insertRentalDetail(RentalTypeModel rentalTypeModel) {
+		int i = 0;
+		try {
+
+			PreparedStatement psac = conn
+					.prepareStatement("select * from rentalTypeModel where description = '"
+							+ rentalTypeModel.getDescription() + "'");
+			ResultSet rsac = psac.executeQuery();
+
+			if (rsac.next()) {
+				return -1;
+			}
+			
+			
+			PreparedStatement pstmt = conn.prepareStatement(
+					"INSERT INTO `rentalTypeModel`('description') VALUES (?)");
+
+			
+			i = pstmt.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return i;
+	}
+
+
+	
+
+}

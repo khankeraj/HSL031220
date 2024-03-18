@@ -1,0 +1,148 @@
+package com.master.action;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts2.ServletActionContext;
+
+import com.login.loginModel.userinfo;
+import com.master.Constants.Constants;
+import com.master.dao.CityMasterDao;
+import com.master.dao.CopyCustomerMasterDAO;
+import com.master.dao.CustomerMasterDAO;
+import com.master.dao.DesignationMasterDao;
+import com.master.dao.DriverMasterDao;
+import com.master.dao.EmployeeMasterDAO;
+import com.master.dao.ProductMasterDao;
+import com.master.dao.TransporterMasterDao;
+import com.master.dao.VehicleMasterDao;
+import com.master.model.CityModel;
+import com.master.model.CustomerMasterModel;
+import com.master.model.DesignationModel;
+import com.master.model.DriverModel;
+import com.master.model.EmployeeMasterModel;
+import com.master.model.ProductModel;
+import com.master.model.RentalTypeModel;
+import com.master.model.TransporterModel;
+import com.master.model.VehicleModel;
+import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
+
+public class CopyCustomerMasterAction extends ActionSupport implements ModelDriven {
+	
+	
+	private CityModel city_modal = new CityModel();
+	private VehicleModel vehicle_model = new VehicleModel();
+	
+	private RentalTypeModel rentalTypeModel = new RentalTypeModel();
+
+	public CityModel getCity_modal() {
+		return city_modal;
+	}
+
+	public void setCity_modal(CityModel city_modal) {
+		this.city_modal = city_modal;
+	}
+
+	public VehicleModel getVehicle_model() {
+		return vehicle_model;
+	}
+
+	public void setVehicle_model(VehicleModel vehicle_model) {
+		this.vehicle_model = vehicle_model;
+	}
+
+	public RentalTypeModel getRentalTypeModel() {
+		return rentalTypeModel;
+	}
+
+	public void setRentalTypeModel(RentalTypeModel rentalTypeModel) {
+		this.rentalTypeModel = rentalTypeModel;
+	}
+
+	
+	private List<CityModel> fetchCityDetails;
+
+	private List<VehicleModel> fetchVehicleDetails;
+
+	
+	
+	public List<CityModel> getFetchCityDetails() {
+		return fetchCityDetails;
+	}
+
+	public void setFetchCityDetails(List<CityModel> fetchCityDetails) {
+		this.fetchCityDetails = fetchCityDetails;
+	}
+
+	public List<VehicleModel> getFetchVehicleDetails() {
+		return fetchVehicleDetails;
+	}
+
+	public void setFetchVehicleDetails(List<VehicleModel> fetchVehicleDetails) {
+		this.fetchVehicleDetails = fetchVehicleDetails;
+	}
+
+	public String deleteVehicleMasterDetails() {
+		String response;
+		HttpServletRequest request = ServletActionContext.getRequest();
+		String delete_vehicle_id = request.getParameter("vehicle_id");
+
+		int i = new VehicleMasterDao().deleteVehicle_master(delete_vehicle_id);
+		if (i > 0) {
+			response = "success";
+		} else {
+			response = "fail";
+		}
+
+		return response;
+	}
+
+	
+	public String fetchForUpdateCityDetailss() {
+		String response;
+		HttpServletRequest request = ServletActionContext.getRequest();
+		String city_id = request.getParameter("city_id");
+
+		fetchCityDetails = new CityMasterDao().fetchForUpdateCityDetailss(city_modal, city_id);
+
+		System.out.println(fetchCityDetails.size());
+
+		if (fetchCityDetails.size() > 0) {
+			response = "success";
+		} else {
+			response = "fail";
+		}
+
+		return response;
+	}
+	
+	
+
+	public String insertRentalDetail() {
+		String response;
+		HttpServletRequest request = ServletActionContext.getRequest();
+		int i = new CopyCustomerMasterDAO().insertRentalDetail(rentalTypeModel);
+		if (i > 0) {
+			response = "success";
+		} else if (i == -1) {
+			response = "already";
+		} else {
+			response = "fail";
+		}
+
+		return response;
+	}
+
+	@Override
+	public Object getModel() {
+		// TODO Auto-generated method stub
+		return rentalTypeModel;
+	}
+
+}

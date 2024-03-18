@@ -4455,10 +4455,10 @@
 		<action name="RoleMaster"
 			class="com.accessibility.action.accessibility_action"
 			method="execute">
-
 			<result name="success">/master/RoleMaster.jsp</result>
-
 		</action>
+		
+		
 		<action name="Add_RoleMaster"
 			class="com.accessibility.action.accessibility_action"
 			method="insertRoleMaster">
@@ -4619,7 +4619,6 @@
 		<action name="venderpaymentSubmit"
 			class="com.master.action.DeliveryDoneAction"
 			method="submitvendormpayment">
-
 			<result name="success">/success.jsp</result>
 			<result name="fail">/fail.jsp</result>
 		</action>
@@ -4643,9 +4642,7 @@
 			<result name="fail">/fail.jsp</result>
 		</action>
 
-		<!-- <action name="newRentalTypeMaster" class="com.master.action.NewRentalTypeMasterAction" 
-			method="rentalType"> <result name="success">/master/RentalType.jsp</result> 
-			<result name="fail">/fail.jsp</result> </action> -->
+
 
 		<action name="newRentalTypeMaster"
 			class="com.master.action.NewRentalTypeMasterAction"
@@ -4666,11 +4663,10 @@
 
 		<action name="CopyCustomerMasterAction"
 			class="com.master.action.CopyCustomerMasterAction"
-			method="fetchRentalDetail">
-			<result name="success">/master/CopyRentalType.jsp</result>
+			method="insertRentalDetail">
+			<result name="success">/master/copy_city_master_reports.jsp</result>
 			<result name="fail">/fail.jsp</result>
-		</action>
-
+		</action> 
 
 		<action name="AddNewRentalTypeMaster"
 			class="com.master.action.NewRentalTypeMasterAction"
@@ -4680,15 +4676,14 @@
 			<result name="fail">/fail.jsp</result>
 		</action>
 
-		<action name="city_master_Reports"
-			class="com.master.action.CustomerMasterAction"
-			method="fetchCityMasterDetails">
-			<result name="success">/master/city_master_reports.jsp</result>
-			<result name="fail">/master/city_master_reports.jsp</result>
+<!-- 
+		<action name="New_city_master_Reports"
+			class="com.master.action.NewRentalTypeMasterAction"
+			method="insertRentalDetail">
+			<result name="success">/master/copy_city_master_reports.jsp</result>
+			<result name="fail">/master/fail.jsp</result>
 		</action>
-
-
-
+ -->
 		<!--new transporter invoice modul End -->
 
 
