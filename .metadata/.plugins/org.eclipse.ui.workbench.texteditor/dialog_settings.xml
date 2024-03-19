@@ -1,38 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="RentalType"/>
+		<item key="selection" value="city_master_Reports"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="rentalType"/>
-			<item value="newRentalTypeMaster"/>
-			<item value="master"/>
-			<item value="masters"/>
-			<item value="response"/>
-			<item value="sendredirect"/>
-			<item value="redirect"/>
 			<item value="city_master_Reports"/>
+			<item value="getdashboard"/>
+			<item value="dashboard"/>
+			<item value="masters"/>
+			<item value="master"/>
+			<item value="city master"/>
+			<item value="Masters"/>
+			<item value="loginAction"/>
+			<item value="rentalType"/>
+			<item value="CopyCustomerMasterAction"/>
+			<item value="newRentalTypeMaster"/>
+			<item value="cityMaster"/>
 			<item value="CityMaster"/>
-			<item value="insertRentalDetail"/>
-			<item value="href"/>
-			<item value="include"/>
-			<item value="include file"/>
-			<item value="&lt;%@ include file"/>
-			<item value="fetchCityMasterDetails"/>
+			<item value="getDateFormatAsDb"/>
+			<item value="response"/>
 		</list>
 		<list key="replacehistory">
+			<item value="wwww"/>
 			<item value=""/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="77"/>
-		<item key="DIALOG_Y_ORIGIN" value="113"/>
-		<item key="DIALOG_WIDTH" value="280"/>
-		<item key="DIALOG_HEIGHT" value="457"/>
+		<item key="DIALOG_X_ORIGIN" value="884"/>
+		<item key="DIALOG_Y_ORIGIN" value="144"/>
+		<item key="DIALOG_WIDTH" value="267"/>
+		<item key="DIALOG_HEIGHT" value="464"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 	</section>
 </section>

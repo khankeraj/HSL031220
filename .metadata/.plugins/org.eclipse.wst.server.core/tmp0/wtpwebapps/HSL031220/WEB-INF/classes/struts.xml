@@ -4661,13 +4661,6 @@
 		</action>
 
 
-		<action name="CopyCustomerMasterAction"
-			class="com.master.action.CopyCustomerMasterAction"
-			method="insertRentalDetail">
-			<result name="success">/master/copy_city_master_reports.jsp</result>
-			<result name="fail">/fail.jsp</result>
-		</action> 
-
 		<action name="AddNewRentalTypeMaster"
 			class="com.master.action.NewRentalTypeMasterAction"
 			method="insertRental_type">
@@ -4676,14 +4669,23 @@
 			<result name="fail">/fail.jsp</result>
 		</action>
 
-<!-- 
-		<action name="New_city_master_Reports"
+
+		<action name="rental_master_reports"
 			class="com.master.action.NewRentalTypeMasterAction"
-			method="insertRentalDetail">
-			<result name="success">/master/copy_city_master_reports.jsp</result>
-			<result name="fail">/master/fail.jsp</result>
+			method="update_rental_details">
+			<result name="success">/master/rental_master_reports.jsp</result>
+			<result name="fail">/master/rental_master_reports.jsp</result>
 		</action>
- -->
+		
+		
+		<action name="update_rental_master_details"
+			class="com.master.action.NewRentalTypeMasterAction"
+			method="update_rental_details">
+			<result name="success">/update.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+		
+
 		<!--new transporter invoice modul End -->
 
 

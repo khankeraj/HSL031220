@@ -54,11 +54,6 @@
 						<br> <a href="CityMaster"><button
 								style="margin-left: 20px; height: 30px; width: 100px;">Add
 								New</button></a> 
-								<br>
-								<br> <a href="newRentalTypeMaster"><button
-								style="margin-left: 20px; height: 30px; width: 100px;">Add
-								Rental</button></a>
-
 						<div class="panel-heading">
 							<h3 class="panel-title">City Master Report</h3>
 						</div>

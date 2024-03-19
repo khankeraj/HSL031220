@@ -151,6 +151,7 @@
 										<ul class="collapse">
 											<!-- <li><a href="contractReport"><img alt="" height="15px;" src="configure/img/contract (1).svg">&nbsp;Contract Reports</a></li> -->
 											<li><a href="customer_master_Reports"><img alt="" height="15px;" src="configure/img/specialist-user.svg">&nbsp;<font style="font-weight: 600;">Customer Master</font></a></li>
+											<li><a href="newRentalTypeMaster"><img alt="" height="15px;" src="configure/img/icons8-user-location-50.png">&nbsp;<font style="font-weight: 600;">Rental Type Master</font></a></li>
 											<li><a href="city_master_Reports"><img alt="" height="15px;" src="configure/img/icons8-building-50.png">&nbsp;<font style="font-weight: 600;">City Master</a></li>
 											<li><a href="route_master_Reports"><img alt="" height="15px;" src="configure/img/icons8-route-50.png">&nbsp;<font style="font-weight: 600;">Route Master</a></li>
 											<li><a href="product_master_Reports"><img alt="" height="15px;" src="configure/img/icons8-box-50.png">&nbsp;<font style="font-weight: 600;">Product Master</a></li>
