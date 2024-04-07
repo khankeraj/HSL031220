@@ -1,0 +1,4634 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.custom.i18n.resources" value="global" />
+	<package name="pack" namespace="/" extends="struts-default">
+
+		<action name="loginAction"
+			class="com.login.loginAction.LoginAction" method="getAccess">
+			<result name="success">/pages/form/homePage.jsp</result>
+			<result name="ERRORUSERNAME">/wrongUser.jsp</result>
+		</action>
+
+		<action name="Logout" class="com.login.loginAction.LoginAction"
+			method="getLogout">
+			<result name="success">/login.jsp</result>
+
+		</action>
+		<action name="dashboard"
+			class="com.login.loginAction.LoginAction" method="getdashboard">
+			<result name="success">/pages/form/homePage.jsp</result>
+			<result name="fail">/wrongUser.jsp</result>
+		</action>
+
+		<action name="taxMaster"
+			class="com.master.action.TaxMasterAction">
+			<result name="success">/master/taxMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="InsertTaxMaster"
+			class="com.master.action.TaxMasterAction" method="insert_tax_master">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="TaxMasterReports"
+			class="com.master.action.TaxMasterAction" method="fetchTaxReports">
+			<result name="success">/master/taxReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="UpdateTax"
+			class="com.master.action.TaxMasterAction" method="fetchForUpdate">
+			<result name="success">/master/editTaxMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="editTaxMaster"
+			class="com.master.action.TaxMasterAction" method="UpdateTaxMaster">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+		<action name="Tax_Delete"
+			class="com.master.action.TaxMasterAction" method="deleteTax">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="formgsttaxmaster"
+			class="com.master.action.GstTaxMasterAction">
+			<result name="success">/master/gstTaxMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+		<action name="InsertgstTaxMaster"
+			class="com.master.action.GstTaxMasterAction"
+			method="insert_gst_tax_master">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+		<action name="gsttaxmaster"
+			class="com.master.action.GstTaxMasterAction">
+			<result name="success">/master/gstTaxMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="gsttaxMasterReports"
+			class="com.master.action.GstTaxMasterAction"
+			method="fetchGstTaxReports">
+			<result name="success">/master/gstTaxMasterReports.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="itemmaster"
+			class="com.master.action.ItemMasterAction">
+			<result name="success">/master/itemMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="fetchItemDetails"
+			class="com.master.action.ItemMasterAction" method="fetchItemDetails">
+			<result name="success">/master/fetchItemDetailsAjax.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="Insert_Item_Master"
+			class="com.master.action.ItemMasterAction"
+			method="insert_item_master">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="itemmasterReports"
+			class="com.master.action.ItemMasterAction" method="fetchItemReports">
+			<result name="success">/master/itemMasterReports.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="customer"
+			class="com.master.action.ItemMasterAction">
+			<result name="success">/master/customer.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="getTaxPercentage"
+			class="com.master.action.ItemMasterAction"
+			method="fetchTaxPercentage">
+			<result name="success">/master/fetchTaxPercentageAjax.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="SupplierMaster"
+			class="com.master.action.SupplierMasterAction">
+			<result name="success">/master/supplierMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="Suppiler_Company_Master_Action"
+			class="com.master.action.SupplierMasterAction"
+			method="insertCompanyMaster">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="SupplierReports"
+			class="com.master.action.SupplierMasterAction"
+			method="fetchSupplierDetails">
+			<result name="success">/master/supplier_company_master.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="TokenForm"
+			class="com.quotation.action.TokenAmountAction"
+			method="getFinalizationAmttokenamt">
+			<result name="success">/pages/form/token.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="InsertTokenAmount"
+			class="com.quotation.action.TokenAmountAction"
+			method="insert_token_Form">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="TokenFormReports"
+			class="com.quotation.action.TokenAmountAction"
+			method="fetchTokenReports">
+			<result name="success">/pages/form/tokenAmtReports.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="salesAgreement"
+			class="com.master.action.SalesAgreementAction">
+			<result name="success">/master/salesAgreement.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="InsertSalesAgreement"
+			class="com.master.action.SalesAgreementAction"
+			method="insert_sales_agreement">
+			<result name="success">/pages/form/salesAgreementPrints.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="Agreementt_reports"
+			class="com.master.action.SalesAgreementAction"
+			method="fetch_agreements_details">
+			<result name="success">/master/salesAgreementReports.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="ViewAgreement"
+			class="com.master.action.SalesAgreementAction"
+			method="set_agreement_details">
+			<result name="success">/pages/form/salesAgreementPrints2.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="customer_master"
+			class="com.master.action.CustomerMasterAction">
+			<result name="success">/master/customer_master.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="customer_master_insert"
+			class="com.master.action.CustomerMasterAction"
+			method="insert_customer_master_details">
+			<result name="success">/success.jsp</result>
+			<result name="already">/already.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="customer_master_Reports"
+			class="com.master.action.CustomerMasterAction"
+			method="fetchCustomerMasterDetails">
+			<result name="success">/master/customer_master_reports.jsp</result>
+			<result name="fail">/master/customer_master_reports.jsp</result>
+		</action>
+
+		<action name="rate_master_Reports"
+			class="com.master.action.RateMasterAction"
+			method="fetchRateMasterDetails">
+			<result name="success">/master/rate_master_reports.jsp</result>
+			<result name="fail">/master/rate_master_reports.jsp</result>
+		</action>
+
+
+		<action name="city_master_Reports"
+			class="com.master.action.CustomerMasterAction"
+			method="fetchCityMasterDetails">
+			<result name="success">/master/city_master_reports.jsp</result>
+			<result name="fail">/master/city_master_reports.jsp</result>
+		</action>
+
+
+		<action name="driver_master_Reports"
+			class="com.master.action.CustomerMasterAction"
+			method="fetchDriverMasterDetails">
+			<result name="success">/master/driver_master_reports.jsp</result>
+			<result name="fail">/master/driver_master_reports.jsp</result>
+		</action>
+
+		<action name="vehicle_master_Reports"
+			class="com.master.action.CustomerMasterAction"
+			method="fetchVehicleMasterDetails">
+			<result name="success">/master/vehicle_master_reports.jsp</result>
+			<result name="fail">/master/vehicle_master_reports.jsp</result>
+		</action>
+
+
+		<action name="route_master_Reports"
+			class="com.master.action.CustomerMasterAction"
+			method="fetchRouteMasterDetails">
+			<result name="success">/master/route_master_reports.jsp</result>
+			<result name="fail">/master/route_master_reports.jsp</result>
+		</action>
+
+
+		<action name="product_master_Reports"
+			class="com.master.action.CustomerMasterAction"
+			method="fetchProductMasterDetails">
+			<result name="success">/master/product_master_reports.jsp</result>
+			<result name="fail">/master/product_master_reports.jsp</result>
+		</action>
+
+		<action name="expense_master_Reports"
+			class="com.master.action.CustomerMasterAction"
+			method="fetchExpenseMasterDetails">
+			<result name="success">/master/expense_master_reports.jsp</result>
+			<result name="fail">/master/expense_master_reports.jsp</result>
+		</action>
+
+
+		<action name="designation_master_Reports"
+			class="com.master.action.CustomerMasterAction"
+			method="fetchDesignationMasterDetails">
+			<result name="success">/master/designation_master_reports.jsp</result>
+			<result name="fail">/master/designation_master_reports.jsp</result>
+		</action>
+
+		<action name="transport_master_Reports"
+			class="com.master.action.CustomerMasterAction"
+			method="fetchTransporterMasterDetails">
+			<result name="success">/master/transporter_master_reports.jsp</result>
+			<result name="fail">/master/transporter_master_reports.jsp</result>
+		</action>
+
+
+
+
+		<action name="DeleteCustomerMaster"
+			class="com.master.action.CustomerMasterAction"
+			method="deleteCustomerMasterDetails">
+			<result name="success">/Delete.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="DeleteDriverMaster"
+			class="com.master.action.CustomerMasterAction"
+			method="deleteDriverMasterDetails">
+			<result name="success">/Delete.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="DeleteVehicleMaster"
+			class="com.master.action.CustomerMasterAction"
+			method="deleteVehicleMasterDetails">
+			<result name="success">/Delete.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="DeleteCityMaster"
+			class="com.master.action.CustomerMasterAction"
+			method="deleteCityMasterDetails">
+			<result name="success">/Delete.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="DeleteRouteMaster"
+			class="com.master.action.CustomerMasterAction"
+			method="deleteRouteMasterDetails">
+			<result name="success">/Delete.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="DeleteProductMaster"
+			class="com.master.action.CustomerMasterAction"
+			method="deleteProductMasterDetails">
+			<result name="success">/Delete.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="DeleteDesignationMaster"
+			class="com.master.action.CustomerMasterAction"
+			method="deleteDesignationMasterDetails">
+			<result name="success">/Delete.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="DeleteExpenseMaster"
+			class="com.master.action.CustomerMasterAction"
+			method="deleteExpenseMasterDetails">
+			<result name="success">/Delete.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="DeleteEmployeeMaster"
+			class="com.master.action.CustomerMasterAction"
+			method="deleteEmployeeMasterDetails">
+			<result name="success">/Delete.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="DeleteTransporterMaster"
+			class="com.master.action.CustomerMasterAction"
+			method="deleteTransporterMasterDetails">
+			<result name="success">/Delete.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="UpdatecustomerMaster"
+			class="com.master.action.CustomerMasterAction"
+			method="fetchForUpdateCustomerDetailss">
+			<result name="success">/master/editCustomerMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="UpdatecityMaster"
+			class="com.master.action.CustomerMasterAction"
+			method="fetchForUpdateCityDetailss">
+			<result name="success">/master/editCityMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="UpdateproductMaster"
+			class="com.master.action.CustomerMasterAction"
+			method="fetchForUpdateProductDetailss">
+			<result name="success">/master/editProductMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="UpdaterouteMaster"
+			class="com.master.action.CustomerMasterAction"
+			method="fetchForUpdateRouteDetailss">
+			<result name="success">/master/editRouteMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="UpdatedriverMaster"
+			class="com.master.action.CustomerMasterAction"
+			method="fetchForUpdateDriverDetailss">
+			<result name="success">/master/editDriverMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="UpdatevehicleMaster"
+			class="com.master.action.CustomerMasterAction"
+			method="fetchForUpdateVehicleDetailss">
+			<result name="success">/master/editVehicleMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="UpdateexpenseMaster"
+			class="com.master.action.CustomerMasterAction"
+			method="fetchForUpdateExpenseDetailss">
+			<result name="success">/master/editExpenseMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="UpdatedesignationMaster"
+			class="com.master.action.CustomerMasterAction"
+			method="fetchForUpdateDesignationDetailss">
+			<result name="success">/master/editDesignationMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="UpdateemployeeMaster"
+			class="com.master.action.CustomerMasterAction"
+			method="fetchForUpdateEmployeeDetailss">
+			<result name="success">/master/editEmployeeMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="UpdatetransporterMaster"
+			class="com.master.action.CustomerMasterAction"
+			method="fetchForUpdateTransporterDetailss">
+			<result name="success">/master/editTransporterMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="update_customer_master_details"
+			class="com.master.action.CustomerMasterAction"
+			method="update_customer_details">
+			<result name="success">/update.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="update_driver_master_details"
+			class="com.master.action.DriverMasterAction"
+			method="update_driver_details">
+			<result name="success">/update.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="update_vehicle_master_details"
+			class="com.master.action.VehicleMasterAction"
+			method="update_vehicle_details">
+			<result name="success">/update.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="update_city_master_details"
+			class="com.master.action.CityMasterAction"
+			method="update_city_details">
+			<result name="success">/update.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="update_route_master_details"
+			class="com.master.action.RouteMasterAction"
+			method="update_route_details">
+			<result name="success">/update.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="update_product_master_details"
+			class="com.master.action.ProductMasterAction"
+			method="update_product_details">
+			<result name="success">/update.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="update_designation_master_details"
+			class="com.master.action.DesignationMasterAction"
+			method="update_designation_details">
+			<result name="success">/update.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="update_expense_master_details"
+			class="com.master.action.ProductMasterAction"
+			method="update_expense_details">
+			<result name="success">/update.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="update_employee_master_details"
+			class="com.master.action.EmployeeMasterAction"
+			method="update_employee_details">
+			<result name="success">/update.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="update_transporter_master_details"
+			class="com.master.action.TransporterMasterAction"
+			method="update_transporter_details">
+			<result name="success">/update.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="contractReport"
+			class="com.master.action.ContractMaster"
+			method="fetchContractDetails">
+			<result name="success">/master/contract.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="contractForm"
+			class="com.master.action.ContractMaster"
+			method="fetchCustomerDetailsToContractor">
+			<result name="success">/master/contractMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="fetchRefrenceNO"
+			class="com.master.action.ContractMaster" method="fetchReferance_no">
+			<result name="success">/master/referanceno.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="contractMaster"
+			class="com.master.action.ContractMaster"
+			method="insert_customer_details">
+			<result name="success1">/master/QuotationIndex2.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="delete_contractor"
+			class="com.master.action.ContractMaster" method="deleteContractor">
+			<result name="success">/Delete.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="contract_edit_Master"
+			class="com.master.action.ContractMaster"
+			method="contract_edit_Master">
+			<result name="success">/master/editContractorMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="SubmitQuotationName"
+			class="com.master.action.QuotationNameAction">
+			<result name="success">/master/SubmitQuotationName.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="getQuotationName"
+			class="com.quotation.action.InvestmentAndExpencesAction"
+			method="fetchInvestmentAndExp">
+			<result name="success">/master/investMentAndExpences.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="InvestmentAndExpensesMaster"
+			class="com.quotation.action.InvestmentAndExpencesAction"
+			method="insert_investment_expences">
+			<result name="success">/QuotationPrintsFinal.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="EditQuotationName"
+			class="com.quotation.action.SubmitQuotationAction"
+			method="editQuotationDetails">
+			<result name="success">/QuotationPrintsFinal.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="QuotationMaster"
+			class="com.master.action.QuotationNameAction">
+			<result name="success">/master/quotationMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="quotationMaster"
+			class="com.master.action.QuotationNameAction"
+			method="saveQuotationName">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="QuotationNameReports"
+			class="com.master.action.QuotationNameAction"
+			method="fetchQuotationNameReports">
+			<result name="success">/master/quotationNameReports.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="ROMaster"
+			class="com.quotation.action.ROWaterTPAction"
+			method="fetchROConfiguration">
+			<result name="success">/master/reverseOsmosis.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="ReverseOsmosisWaterTP"
+			class="com.quotation.action.ROWaterTPAction"
+			method="insert_ro_water_plant">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="UpdateReverseOsmosisWaterTP"
+			class="com.quotation.action.ROWaterTPAction" method="updateROWaterTP">
+			<result name="success">/update.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="DeleteQuotationDetails"
+			class="com.quotation.action.ROWaterTPAction" method="deleteRoWatertp">
+			<result name="success">/Delete.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="UpdateQuotationDetails"
+			class="com.quotation.action.ROReportsAction"
+			method="fetchROConfiguration">
+			<result name="success">/master/updateROMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="ROReports"
+			class="com.quotation.action.ROReportsAction" method="fetchReports">
+			<result name="success">/master/roReports.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="ReverseOsmosisWaterTPTechSP"
+			class="com.quotation.action.ROWaterTPAction"
+			method="roTechnicalSpecoifications">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="checkQuotationName"
+			class="com.quotation.action.ROWaterTPAction"
+			method="checkQuotationName">
+			<result name="success">//checkQuotationname.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="FABRinFillCapping"
+			class="com.quotation.action.FABRFCAction"
+			method="fetch_fab_rfc_master_details">
+			<result name="success">/master/fabrfc.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="fabrfc" class="com.quotation.action.FABRFCAction"
+			method="insert_fabrfcMaster">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="FABLabellingMachine"
+			class="com.quotation.action.FABLabellingMachineAction"
+			method="fetchFabLabelingMC">
+			<result name="success">/master/fabLabelingmachine.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="FABRFCReports"
+			class="com.quotation.action.FABRFCReportsAction"
+			method="fetchFABRFCReports">
+			<result name="success">/master/fabrfcReports.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="UpdateFABRFC"
+			class="com.quotation.action.FABRFCAction"
+			method="fetchFABRFCFOrUpdate">
+			<result name="success">/master/updateFABRFC.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="DeleteFABRFC"
+			class="com.quotation.action.FABRFCAction" method="deleteFABRFC">
+			<result name="success">/Delete.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="updatefabrfc"
+			class="com.quotation.action.FABRFCAction"
+			method="updateFABRFCDetails">
+			<result name="success">/update.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="FABLabelingMCReports"
+			class="com.quotation.action.FABLabelingMCAction"
+			method="fetchFABLabelingmcDetails">
+			<result name="success">/master/labelingmcReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="updateLAbelingmcDetails"
+			class="com.quotation.action.FABLabellingMachineAction"
+			method="fetchFABLabelingForUpdate">
+			<result name="success">/master/updateLabelingMc.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="updateFABLabelingmachineDetails"
+			class="com.quotation.action.FABLabellingMachineAction"
+			method="updateFABLabelingMC">
+			<result name="success">/update.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="DeleteFABLabelingmc"
+			class="com.quotation.action.FABLabellingMachineAction"
+			method="deleteFABLabelingmc">
+			<result name="success">/Delete.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="fab_labelling_machine"
+			class="com.quotation.action.FABLabellingMachineAction"
+			method="insert_FABLabellingMachine">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="hot_fab_molding_machine"
+			class="com.quotation.action.HotFABMoldingMachine"
+			method="fetchHotFABModlingMC">
+			<result name="success">/master/hotfabmoldingmachine.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="HotFAB_MoldingMC"
+			class="com.quotation.action.HotFABMoldingMachine"
+			method="insert_hot_fabmoldingmc">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="UpdateHOTFABMoldingmc"
+			class="com.quotation.action.HotFABMoldingMachine"
+			method="fetchForUpdateHOTFAVMolding">
+			<result name="success">/master/updateHotfabMoldingmc.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="HotFAB_MoldingMCUpdate"
+			class="com.quotation.action.HotFABMoldingMachine"
+			method="updateHOTFABMoldingMc">
+			<result name="success">/update.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="DeleteHotFABMoldingmc"
+			class="com.quotation.action.HotFABMoldingMachine"
+			method="deleteHOTFABMoldingmc">
+			<result name="success">/Delete.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="HotfabmoldingReports"
+			class="com.quotation.action.HOTFABMoldReportsAction"
+			method="fetchHotFabMoldingDetails">
+			<result name="success">/master/hotfabmoldingReports.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="highPressureCompressurefetb"
+			class="com.quotation.action.HighPressureCompressorAction"
+			method="fetchHPCDetails">
+			<result name="success">/master/highPressureCompressor.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="HighPressureCompMaster"
+			class="com.quotation.action.HighPressureCompressorAction"
+			method="insert_high_pressure_compressormaster">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="UpdateHPCDetails"
+			class="com.quotation.action.HighPressureCompressorAction"
+			method="fetchForUpdate">
+			<result name="success">/master/updateHPC.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="updateHighPressureCompMaster"
+			class="com.quotation.action.HighPressureCompressorAction"
+			method="updateHPCDetails">
+			<result name="success">/update.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="DeleteHPCDetails"
+			class="com.quotation.action.HighPressureCompressorAction"
+			method="deleteHPCDetails">
+			<result name="success">/Delete.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="HPCReports"
+			class="com.quotation.action.HPCReportsAction"
+			method="fetchHPCReportsDetails">
+			<result name="success">/master/hpcReports.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="lowPressureCompressurefetb"
+			class="com.quotation.action.LowPressureCompressorAction"
+			method="fetchLowPressureCompressure">
+			<result name="success">/master/lowPressureCompressor.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="LowPressureCompMaster"
+			class="com.quotation.action.LowPressureCompressorAction"
+			method="insert_lowPressureCompressorMaster">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="LPCReports"
+			class="com.quotation.action.LPCReportsAction"
+			method="fetchLPCReportsDetails">
+			<result name="success">/master/lpcReports.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="updateLPC"
+			class="com.quotation.action.LowPressureCompressorAction"
+			method="fetchForUpdate">
+			<result name="success">/master/updatelowPressureCompressor.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="updateLowPressureCompMaster"
+			class="com.quotation.action.LowPressureCompressorAction"
+			method="updateLPCDetails">
+			<result name="success">/update.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="DeleteLPC"
+			class="com.quotation.action.LowPressureCompressorAction"
+			method="deleteLPCDetails">
+			<result name="success">/Delete.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="shrinkMachine"
+			class="com.quotation.action.ShrinkMachineAction"
+			method="fetchShrinkMachineMaster">
+			<result name="success">/master/shrinkmachine.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="ShrinkMachineMaster"
+			class="com.quotation.action.ShrinkMachineAction"
+			method="insert_shrinkMachineMaster">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="ShrinkMachineReports"
+			class="com.quotation.action.ShrinkMachineReportsAction"
+			method="fetchShrinkMachineDetails">
+			<result name="success">/master/shrinkmcReports.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="UpdateShrinkMachine"
+			class="com.quotation.action.ShrinkMachineAction"
+			method="fetchForUpdate">
+			<result name="success">/master/updateShrinkMachine.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="UpdateShrinkMachineMaster"
+			class="com.quotation.action.ShrinkMachineAction"
+			method="updateShrinkMC">
+			<result name="success">/update.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="DeleteShrinkMachine"
+			class="com.quotation.action.ShrinkMachineAction"
+			method="deleteShrinkMachine">
+			<result name="success">/Delete.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="AutocasePacker"
+			class="com.quotation.action.AutocasePackerAction"
+			method="fetchAutocasePacker">
+			<result name="success">/master/autoCasePacker.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="AutoCasePackerMaster"
+			class="com.quotation.action.AutocasePackerAction"
+			method="insert_autoCasePacker_master">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="AutoCasePacker"
+			class="com.quotation.action.AutoCasePackeRepoAction"
+			method="fetchAutocasePackerreports">
+			<result name="success">/master/autocasePackerReports.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="UpdateAutoCasePacker"
+			class="com.quotation.action.AutocasePackerAction"
+			method="fetchForUpdate">
+			<result name="success">/master/updateAutoCasePacker.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="UpdateAutoCasePackerMaster"
+			class="com.quotation.action.AutocasePackerAction"
+			method="updateAutoCasePackerDetails">
+			<result name="success">/update.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="DeleteAutoCasePacker"
+			class="com.quotation.action.AutocasePackerAction"
+			method="deleteAutoCasePacker">
+			<result name="success">/Delete.jsp></result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="LabChemMicroBio"
+			class="com.quotation.action.LabChemMicroBioAction"
+			method="fetchLab_chemical_microbiology">
+			<result name="success">/master/labChemicalMicrobiology.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="LabChemMicroBioMaster"
+			class="com.quotation.action.LabChemMicroBioAction"
+			method="insert_lab_chemical_microbiology">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="LabChemMicroBiology"
+			class="com.quotation.action.LabChemMicroBioReportsAction"
+			method="fetchLabChemicalMicrobiology">
+			<result name="success">/master/lab_chem_microbio_reports.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="UpdateLCMDetails"
+			class="com.quotation.action.LabChemMicroBioAction"
+			method="fetchForUpdate">
+			<result name="success">/master/updatelcm.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="UpdateLabChemMicroBioMaster"
+			class="com.quotation.action.LabChemMicroBioAction"
+			method="updateLCMDetails">
+			<result name="success">/update.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="DeleteLCMDetails"
+			class="com.quotation.action.LabChemMicroBioAction"
+			method="deleteLCMDetails">
+			<result name="success">/Delete.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="InvestmentAndExpReports"
+			class="com.quotation.action.InvestmentAndExpReportsAction"
+			method="fetchInvestExpReports">
+			<result name="success">/master/investmentandexpReports.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="UpdateInvestmentAndExpId"
+			class="com.quotation.action.InvestmentAndExpencesAction"
+			method="fetchForUpdateInvestmentAndExp">
+			<result name="success">/master/updateInvestmentAndExp.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="UpdateInvestmentAndExpensesMaster"
+			class="com.quotation.action.InvestmentAndExpencesAction"
+			method="updateInvestmentAndExpenses">
+			<result name="success">/update.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="DeleteInvestmentAndExpId"
+			class="com.quotation.action.InvestmentAndExpencesAction"
+			method="deleteInvestAndExp">
+			<result name="success">/Delete.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="TermsAndConditions"
+			class="com.quotation.action.TermsAndConditionsAction"
+			method="fetch_terms_conditions_details">
+			<result name="success">/master/termsAndConditions.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="TermsAndConditionsMaster"
+			class="com.quotation.action.TermsAndConditionsAction"
+			method="insert_terms_conditions">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="TermsConditionsReports"
+			class="com.quotation.action.TermsConditionsReportsAction"
+			method="fetchTermsConditionsDetails">
+			<result name="success">/master/termsConditionsReports.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="UpdateTermsConditions"
+			class="com.quotation.action.TermsAndConditionsAction"
+			method="fetchForUpdate">
+			<result name="success">/master/updateTermsConditions.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="UpdateTermsAndConditionsMaster"
+			class="com.quotation.action.TermsAndConditionsAction"
+			method="updateTermsConditions">
+			<result name="success">/update.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="DeleteTermsConditions"
+			class="com.quotation.action.TermsAndConditionsAction"
+			method="deleteTermsConditions">
+			<result name="success">/Delete.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="ProductWiseProductionCost"
+			class="com.quotation.action.ProductWiseProductionCostAction"
+			method="fetchProductWiseProductionCost">
+			<result name="success">/master/productWiseProductionCost.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="ProductWiseProductionCostMaster"
+			class="com.quotation.action.ProductWiseProductionCostAction"
+			method="insert_productWiseProductions">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="ProdWiseProdCostReports"
+			class="com.quotation.action.pwpcReportsAction"
+			method="fetchPWPCReports">
+			<result name="success">/master/productWiseProdCostReports.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="UpdatePWPC"
+			class="com.quotation.action.ProductWiseProductionCostAction"
+			method="fetchForUpdatePWPC">
+			<result name="success">/master/updatePWPCDetails.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="updateProductWiseProductionCostMaster"
+			class="com.quotation.action.ProductWiseProductionCostAction"
+			method="updatePWPC">
+			<result name="success">/update.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="DeletePWPC"
+			class="com.quotation.action.ProductWiseProductionCostAction"
+			method="DeletePWPC">
+			<result name="success">/Delete.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="FlowChart"
+			class="com.quotation.action.FlowChartAction"
+			method="fetchFlowChartDetails">
+			<result name="success">/master/flowChart.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="FlowChartsReports"
+			class="com.quotation.action.FlowChartsReportsAction"
+			method="fetchFlowchartsReports">
+			<result name="success">/master/flowChartReports.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="FlowChartMaster"
+			class="com.quotation.action.FlowChartAction"
+			method="insert_flowChart_details">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="UpdateFlowCharts"
+			class="com.quotation.action.FlowChartAction" method="fetchForUpdate">
+			<result name="success">/master/updateFlowCharts.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="updateFlowChartMaster"
+			class="com.quotation.action.FlowChartAction"
+			method="updateFlowCharts">
+			<result name="success">/update.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="DeleteFlowCharts"
+			class="com.quotation.action.FlowChartAction"
+			method="deleteFlowCharts">
+			<result name="success">/Delete.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="AboutWaterATM"
+			class="com.quotation.action.AboutWaterATMAction">
+			<result name="success">/master/aboutWaterAtm.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="AboutWaterATMMaster"
+			class="com.quotation.action.AboutWaterATMAction"
+			method="insert_aboutWaterATM">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="CabinateWaterATM"
+			class="com.quotation.action.CabinateWaterATMAction">
+			<result name="success">/master/cabinateWaterAtm.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="CabinateWaterATMMaster"
+			class="com.quotation.action.CabinateWaterATMAction"
+			method="insert_cabinate_water_atm">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+
+
+		<action name="quotation"
+			class="com.quotation.action.QuotationAction"
+			method="fetchQuotationPages">
+			<result name="success">/pages/form/quatation.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="quotation_Index"
+			class="com.quotation.action.QuotationIndexAction"
+			method="fetchQuotationIndexDetails">
+			<result name="success">/master/QuotationIndex.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="quot_Index"
+			class="com.quotation.action.QuotationIndexAction"
+			method="fetchQuotationIndexDetails1">
+			<result name="success">/master/QuotationIndex2.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="InsertQuotationIndex"
+			class="com.quotation.action.QuotationIndexAction"
+			method="insert_Quotation_Index">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="UpdateQuotationIndexDetails"
+			class="com.quotation.action.QuotationIndexAction"
+			method="fetchForUpdateQuoIndex">
+			<result name="success">/master/updateQuotationIndex.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="UpdateQuoQuotationIndex"
+			class="com.quotation.action.QuotationIndexAction"
+			method="updateQuotationIndex">
+			<result name="success">/update.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="DeleteQuotationIndexDetails"
+			class="com.quotation.action.QuotationIndexAction"
+			method="deleteQuotationIndex">
+			<result name="success">/Delete.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="QuotationIndexReports"
+			class="com.quotation.action.QuotationIndexAction"
+			method="fetchQuotationIndexReportsDetails">
+			<result name="success">/master/quotationIndexReports.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="cover_page"
+			class="com.quotation.action.QuotationAction">
+			<result name="success">/pages/form/coverPage.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="heading_page"
+			class="com.quotation.action.QuotationAction">
+			<result name="success">/pages/form/headingPage.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="who_we_are"
+			class="com.quotation.action.QuotationAction">
+			<result name="success">/pages/form/who_we_are.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="menu"
+			class="com.quotation.action.QuotationAction">
+			<result name="success">/pages/form/menu.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="clients"
+			class="com.quotation.action.QuotationAction">
+			<result name="success">/pages/form/clients.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="project_includes"
+			class="com.quotation.action.QuotationAction">
+			<result name="success">/pages/form/projectIncludes.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="set_contractor_details"
+			class="com.master.action.ContractMaster"
+			method="getContractor_details">
+			<result name="success">/pages/form/contractPage.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="list_of_machi_setup"
+			class="com.master.action.MachinerySetupActtion"
+			method="get_machinery_setup_details">
+			<result name="success">/pages/form/list_of_machinery_setup_Report.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="List_of_machinery_setup_form"
+			class="com.master.action.MachinerySetupActtion">
+			<result name="success">/pages/form/list_of_machinery_setup.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="Machinery_setup"
+			class="com.master.action.MachinerySetupActtion"
+			method="insert_machinery_details">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="Reverse_Osmosis"
+			class="com.master.action.ReverseOsmosisAction">
+			<result name="success">/pages/form/roPage.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="technical_specification"
+			class="com.master.action.technicalSpecificationAction">
+			<result name="success">/pages/form/technical_specification.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="RisingCappingMachine"
+			class="com.master.action.RisingCappingMachineAction">
+			<result name="success">/pages/form/risingCappingMachine.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="LabellingMachine"
+			class="com.master.action.LabellingMachineAction">
+			<result name="success">/pages/form/labellingMachine.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="BlowMoldingMachine"
+			class="com.master.action.BlowMoldingMachineAction">
+			<result name="success">/pages/form/bowMoldingMachine.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="HighPressureCompressor"
+			class="com.master.action.HighPressureCompressorAction">
+			<result name="success">/pages/form/highPressureCompressor.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="LowPressureCompressor"
+			class="com.master.action.LowPressureCompressorAction">
+			<result name="success">/pages/form/lowPressureCompressor.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="LaboratoriesChemicalAndMicrobiology"
+			class="com.master.action.LabChemiMicrobiologyAction">
+			<result name="success">/pages/form/laboratoriesChemicalMicrobiology.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="lead_report"
+			class="com.master.action.LeadFormAction"
+			method="fetchLeadFormDetails">
+			<result name="success">/master/leadReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="fetchCustomerDetailsAuto"
+			class="com.master.action.CustomerMasterAction"
+			method="fetchCustomerforautofilled">
+			<result name="success">/master/fetchCustomerDetailsAjax.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="lead_form"
+			class="com.master.action.LeadFormAction">
+			<result name="success">/master/LeadForm.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="LeadForm"
+			class="com.master.action.LeadFormAction"
+			method="insert_leadForm_details">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="editLeadForm"
+			class="com.master.action.LeadFormAction"
+			method="fetchForUpdateLeadForm">
+			<result name="success">/master/editLeadForm.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="UpdateLeadForm"
+			class="com.master.action.LeadFormAction"
+			method="update_leadForm_details">
+			<result name="success">/update.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="deleteLeadForm"
+			class="com.master.action.LeadFormAction" method="delete_lead_form">
+			<result name="success">/Delete.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="meetingFormLinkToLeadLead"
+			class="com.master.action.LeadFormAction"
+			method="fetchLeadDeatilsForMeeting">
+			<result name="success">/master/editMeetingForm.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="Meeting_From_Update"
+			class="com.master.action.MeetingFormAction" method="saveMeeting">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="editMeetingForm"
+			class="com.master.action.MeetingFormAction"
+			method="fetchForUpdateMeetingDetails">
+			<result name="success">/master/fetchMeetingDetails.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="update_Meeting_From_Details"
+			class="com.master.action.MeetingFormAction"
+			method="update_Meeting_From_Details">
+			<result name="success">/update.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="delete_meeting_form"
+			class="com.master.action.MeetingFormAction"
+			method="delete_meetingForm_details">
+			<result name="success">/Delete.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="quotationReports"
+			class="com.quotation.action.QuotationIndexAction">
+			<result name="success">/pages/form/quotationReports.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="EditquotationReports"
+			class="com.quotation.action.QuotationIndexAction">
+			<result name="success">/pages/form/editQuotationReports.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="quotationViewReports"
+			class="com.quotation.action.QuotationIndexAction"
+			method="fetchCustomerDetails">
+			<result name="success">/master/quotationReports.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="getQuotationReports"
+			class="com.quotation.action.QuotationIndexAction"
+			method="fetchQuotationIndexDetails1">
+			<result name="success">/master/QuotationIndex.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="ViewQuotationPrintsDetails"
+			class="com.quotation.action.QuotationIndexAction"
+			method="viewQuotationReports">
+			<result name="success">/QuotationPrintsFinal.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="EditQuotation"
+			class="com.quotation.action.QuotationIndexAction"
+			method="fetchQuotationIndexDetails1">
+			<result name="success">/master/editQuotationIndex2.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="FinalizationQuotation"
+			class="com.quotation.action.QuotationIndexAction"
+			method="fetchQuotationIndexDetails1">
+			<result name="success">/master/finalizationQuotationIndex.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="InsertFinalizedQuotation"
+			class="com.quotation.action.SubmitQuotationAction"
+			method="FinalizationQuotationDetails">
+			<result name="success">/QuotationPrintsFinal.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+
+
+		<action name="meeting_form"
+			class="com.master.action.MeetingFormAction">
+			<result name="success">/master/meetingForm.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="meeting_report"
+			class="com.master.action.MeetingFormAction"
+			method="fetchMeetingDetails">
+			<result name="success">/master/MeetingReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="Meeting_From_insert"
+			class="com.master.action.MeetingFormAction"
+			method="insert_meetingForm_details">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="View_Quotation"
+			class="com.master.action.QuotationMaster">
+			<result name="success">/master/quotation.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="QuotationForm"
+			class="com.master.action.QuotationMaster"
+			method="insert_quotation_details">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="status_report"
+			class="com.status_report.action.StatusReportAction"
+			method="fetchStatusReport">
+			<result name="success">/pages/form/StatusReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="View_Finalization_Reports"
+			class="com.quotation.action.QuotationIndexAction"
+			method="finalizationReportsDetails">
+			<result name="success">/master/finalizationReports.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="siteVisitForm"
+			class="com.master.action.VisitorFormAction">
+			<result name="success">/master/siteVisit.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="InsertSiteVisitForm"
+			class="com.master.action.VisitorFormAction"
+			method="insert_site_visit">
+			<result name="success">/master/sitevisitFormPrints.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="siteVisitReports"
+			class="com.master.action.VisitorFormAction"
+			method="fetchReportsVisitor">
+			<result name="success">/master/siteVisitReports.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="updateSiteVisite"
+			class="com.master.action.VisitorFormAction" method="fetchForUpdate">
+			<result name="success">/master/editSiteVisitForm.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="UpdateSiteVisitForm"
+			class="com.master.action.VisitorFormAction"
+			method="updateSiteVisitForm">
+			<result name="success">/update.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="deleteSiteVisit"
+			class="com.master.action.VisitorFormAction" method="deleteSiteVisit">
+			<result name="success">/Delete.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="VisitorForm"
+			class="com.master.action.VisitorFormAction"
+			method="insert_visitor_details">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="pireports"
+			class="com.master.action.invoice_action" method="fetchPIDetails">
+			<result name="success">/master/pireports.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+
+
+		<action name="view_Customer_Payment_Form"
+			class="com.master.action.CustomerPaymentAction">
+			<result name="success">/master/customer_payment.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="Customer_Payment"
+			class="com.master.action.CustomerPaymentAction"
+			method="insert_customer_payment_details">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="purchase_order"
+			class="com.master.action.PaymentAction" method="openbill">
+			<result name="success">/pages/form/purchase.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="Add_purchase"
+			class="com.master.action.PurchaseAction" method="Add_New_purchase">
+
+			<result name="Notsuffqty">/Notsuffqty.jsp</result>
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+			<result name="print3">/pages/form/ifc_p_pedidos_printout3_purchase.jsp
+			</result>
+		</action>
+
+		<action name="getjobamount1"
+			class="com.master.action.LRmodule.LR_module_Action"
+			method="getjobamount1">
+			<result name="success">/pages/form/getspareprice.jsp</result>
+			<result name="error">/Error.jsp</result>
+		</action>
+
+		<action name="getpmsamount1"
+			class="com.master.action.LRmodule.LR_module_Action"
+			method="getpmsamount1">
+			<result name="success">/pages/form/getspareprice.jsp</result>
+			<result name="error">/Error.jsp</result>
+		</action>
+
+		<action name="GetRemainingAmount"
+			class="com.master.action.LRmodule.LR_module_Action"
+			method="getRemainingAmount">
+			<result name="success">/pages/form/getspareprice.jsp</result>
+			<result name="error">/Error.jsp</result>
+		</action>
+
+
+
+
+
+		<action name="Get_Address"
+			class="com.master.action.LRmodule.LR_module_Action"
+			method="getAddress1">
+			<result name="success">/pages/form/getspareprice.jsp</result>
+			<result name="error">/Error.jsp</result>
+		</action>
+
+
+
+		<action name="purchasereport"
+			class="com.master.action.PurchaseAction" method="purchasereport">
+			<result name="success">/pages/form/purchaseOrderReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="ViewPurchaseOrder"
+			class="com.master.action.PurchaseAction"
+			method="view_purchase_deatails">
+			<result name="success">/pages/form/viewPurchase.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+
+		<action name="View_Material_Received"
+			class="com.master.action.MaterialReceivedAction">
+			<result name="success">/master/materialReceived.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="MaterialReceivedForm"
+			class="com.master.action.MaterialReceivedAction"
+			method="insert_material_received_details">
+			<result name="success">/pages/form/material.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="insert_material_action"
+			class="com.master.action.MaterialReceivedAction"
+			method="materialinsert">
+			<result name="success" type="redirect">/success.jsp</result>
+			<result name="error">/fail.jsp</result>
+			<result name="Already">/Already.jsp</result>
+		</action>
+
+
+
+
+		<action name="TaxInvoiceReport"
+			class="com.master.action.InvoiceTax" method="tax_invoice_report">
+			<result name="success">pages/form/invoicetaxReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="TaxInvoiceForm"
+			class="com.master.action.InvoiceTax" method="openbill">
+			<result name="success">pages/form/invoicetax.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+
+
+
+
+
+		<action name="issue_report"
+			class="com.master.action.IssueAction" method="issue_report">
+			<result name="success">/pages/form/issueReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="IssueForm" class="com.master.action.IssueAction"
+			method="insert_issue_details">
+			<result name="success">/pages/form/issue.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="insert_issue_action"
+			class="com.master.action.IssueAction" method="issueinsert">
+			<result name="success" type="redirect">/success.jsp</result>
+			<result name="error">/fail.jsp</result>
+			<result name="Already">/Already.jsp</result>
+		</action>
+
+
+
+
+		<action name="stock_report"
+			class="com.master.action.StockAction" method="stock_report">
+			<result name="success">/pages/form/stockReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+
+		<action name="View_Assembly"
+			class="com.master.action.AssemblyAction">
+			<result name="success">/master/assembly.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="outstanding_report"
+			class="com.master.action.AssemblyAction" method="outstanding_report">
+			<result name="success">/pages/form/outstandingReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="AssemblyForm"
+			class="com.master.action.AssemblyAction"
+			method="insert_assembly_details">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="issue_spare_bulk_report"
+			class="com.master.action.AssemblyAction"
+			method="issue_spare_bulk_report">
+			<result name="success">pages/form/issue_spare_bulkReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+
+
+		<action name="View_Ready" class="com.master.action.ReadyAction">
+			<result name="success">/master/ready.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="ReadyForm" class="com.master.action.ReadyAction"
+			method="insert_ready_details">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="View_DC" class="com.master.action.DCAction">
+			<result name="success">/master/dc.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="DCForm" class="com.master.action.DCAction"
+			method="insert_dc_details">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="View_Installation"
+			class="com.master.action.InstallationAction">
+			<result name="success">/master/installation.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="Installation_Form"
+			class="com.master.action.InstallationAction"
+			method="insert_installation_details">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="View_Payment"
+			class="com.master.action.PaymentAction">
+			<result name="success">/master/payment.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="Payment_Form"
+			class="com.master.action.PaymentAction"
+			method="insert_payment_details">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="FetchspareGatepassAssemblyforminvoice"
+			class="com.master.action.invoice_action"
+			method="FetchspareGatepassAssemblyform">
+			<result name="success">/pages/forms/Gatepassdisplayinvoice.jsp</result>
+			<result name="error">/Error.jsp</result>
+		</action>
+
+		<action name="getjobamountagain"
+			class="com.master.action.LRmodule.LR_module_Action"
+			method="getjobamountagain">
+			<result name="success">/lrmodule/getspareprice.jsp</result>
+			<result name="error">/Error.jsp</result>
+		</action>
+
+		<action name="assignBill"
+			class="com.master.action.PaymentAction" method="openbill">
+
+			<result name="success">/pages/form/invoice.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="PIPaymentReports"
+			class="com.master.action.PaymentAction"
+			method="fetchPIPaymentReports">
+			<result name="success">/master/piPaymentReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="bankMaster"
+			class="com.master.action.BankMasterAction">
+			<result name="success">/master/bankMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="InsertBankMaster"
+			class="com.master.action.BankMasterAction"
+			method="insert_bank_master_details">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="bankReport"
+			class="com.master.action.BankMasterAction" method="fetchBankMaster">
+			<result name="success">/master/bankMasterReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="gatePass"
+			class="com.master.action.GatePassAction">
+			<result name="success">/master/gatepass.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="EmployeeMaster"
+			class="com.master.action.EmployeeMasterAction">
+			<result name="success">/master/EmployeeMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="DriverMaster"
+			class="com.master.action.EmployeeMasterAction" method="driverMaster">
+			<result name="success">/master/DriverMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="VehicleMaster"
+			class="com.master.action.EmployeeMasterAction" method="vehicleMaster">
+			<result name="success">/master/VehicleMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="CityMaster"
+			class="com.master.action.EmployeeMasterAction" method="cityMaster">
+			<result name="success">/master/CityMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="RateMaster"
+			class="com.master.action.RateMasterAction" method="rateMaster">
+			<result name="success">/master/RateMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="RouteMaster"
+			class="com.master.action.EmployeeMasterAction" method="routeMaster">
+			<result name="success">/master/RouteMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="ProductMaster"
+			class="com.master.action.EmployeeMasterAction" method="productMaster">
+			<result name="success">/master/ProductMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="ExpenseMaster"
+			class="com.master.action.EmployeeMasterAction" method="expenseMaster">
+			<result name="success">/master/ExpenseMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="TransportMaster"
+			class="com.master.action.EmployeeMasterAction"
+			method="transportMaster">
+			<result name="success">/master/TransportMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="DesignationMaster"
+			class="com.master.action.DesignationMasterAction"
+			method="designationMaster">
+			<result name="success">/master/DesignationMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="EmployeeReports"
+			class="com.master.action.EmployeeMasterAction"
+			method="fetchEmployeeDetails">
+			<result name="success">/master/employeeReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="Add_New_Employee"
+			class="com.master.action.EmployeeMasterAction"
+			method="insert_employee_details">
+			<result name="success">/success.jsp</result>
+			<result name="already">/already.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+
+		<action name="Add_New_Driver"
+			class="com.master.action.DriverMasterAction"
+			method="insert_driver_details">
+			<result name="success">/success.jsp</result>
+			<result name="already">/already.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="Add_New_Vehicle"
+			class="com.master.action.VehicleMasterAction"
+			method="insert_vehicle_details">
+			<result name="success">/success.jsp</result>
+			<result name="already">/already.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="Add_New_City"
+			class="com.master.action.CityMasterAction"
+			method="insert_city_details">
+			<result name="success">/success.jsp</result>
+			<result name="already">/already.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="Add_New_Route"
+			class="com.master.action.RouteMasterAction"
+			method="insert_route_details">
+			<result name="success">/success.jsp</result>
+			<result name="already">/already.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="Add_New_Product"
+			class="com.master.action.ProductMasterAction"
+			method="insert_product_details">
+			<result name="success">/success.jsp</result>
+			<result name="already">/already.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="Add_New_Transport"
+			class="com.master.action.EmployeeMasterAction"
+			method="insert_transport_details">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="Add_New_Expense"
+			class="com.master.action.ExpenseMasterAction"
+			method="insert_expense_details">
+			<result name="success">/success.jsp</result>
+			<result name="already">/already.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="Add_New_Designation"
+			class="com.master.action.DesignationMasterAction"
+			method="insert_designation_details">
+			<result name="success">/success.jsp</result>
+			<result name="already">/already.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="Add_New_Transporter"
+			class="com.master.action.TransporterMasterAction"
+			method="insert_transporter_details">
+			<result name="success">/success.jsp</result>
+			<result name="already">/already.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="Add_New_GatePass"
+			class="com.master.action.GatePassAction"
+			method="insertGetPassMDetails">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="Add_invoice"
+			class="com.master.action.invoice_action" method="Add_New_invoice">
+
+			<result name="Notsuffqty">/Notsuffqty.jsp</result>
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+			<result name="print3">/pages/form/ifc_p_pedidos_printout3_invoice.jsp
+			</result>
+		</action>
+
+
+
+		<action name="getjobamount1"
+			class="com.master.action.LRmodule.LR_module_Action"
+			method="getjobamount1">
+			<result name="success">/pages/form/getspareprice.jsp</result>
+			<result name="error">/Error.jsp</result>
+		</action>
+
+		<action name="getpmsamount1"
+			class="com.master.action.LRmodule.LR_module_Action"
+			method="getpmsamount1">
+			<result name="success">/pages/form/getspareprice.jsp</result>
+			<result name="error">/Error.jsp</result>
+		</action>
+
+		<action name="cup" class="com.master.action.Job_card_action1"
+			method="openbill">
+			<result name="success">/pages/form/CustomerPayment.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="insertcustomerpaymentv"
+			class="com.master.action.dealer_payment_action"
+			method="insertcustomerpaymentv">
+			<result name="success">/Generate_Voucher_NO.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="InvoiceSearch1"
+			class="com.master.action.Purchase_action" method="invoicesearch1">
+
+			<result name="success">/pages/form/displaymaterial1.jsp</result>
+			<result name="error">/Error.jsp</result>
+
+		</action>
+
+
+
+		<action name="RM"
+			class="com.master.action.ResourceMasterAction">
+			<result name="success">/master/resourceMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+		<action name="ResourceMaster"
+			class="com.master.action.ResourceMasterAction"
+			method="insert_resource_master">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="TripForm" class="com.master.action.TripAction">
+			<result name="success">/pages/form/TripForm.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="Add_New_Trip"
+			class="com.master.action.TripAction" method="insert_trip_details">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="route_master_Reports"
+			class="com.master.action.CustomerMasterAction"
+			method="fetchRouteMasterDetails">
+			<result name="success">/master/route_master_reports.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="trip_Reports"
+			class="com.master.action.TripAction" method="fetchTripDetails">
+			<result name="success">/pages/form/tripReport.jsp</result>
+			<result name="fail">/pages/form/tripReport.jsp</result>
+		</action>
+
+		<action name="LR_form" class="com.master.action.TripAction"
+			method="lrForm">
+			<result name="success">/pages/form/LRForm.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="insert_updown_action"
+			class="com.master.action.TripAction" method="updowninsert">
+			<result name="success">/printLR.jsp</result>
+			<result name="error">/fail.jsp</result>
+			<result name="Already">/Already.jsp</result>
+		</action>
+
+
+		<action name="LR_print" class="com.master.action.TripAction"
+			method="printLR">
+			<result name="success">/printLR2_show.jsp</result>
+			<result name="error">/fail.jsp</result>
+			<result name="Already">/Already.jsp</result>
+		</action>
+
+
+		<action name="InvoicePrint"
+			class="com.master.action.DeliveryDoneAction" method="printInvoice">
+			<result name="success">/pages/form/invoiceprint.jsp</result>
+			<result name="success1">/pages/form/invoiceprintIgst.jsp</result>
+			<result name="error">/fail.jsp</result>
+			<result name="Already">/Already.jsp</result>
+		</action>
+
+
+		<action name="ID_print" class="com.master.action.TripAction"
+			method="printID">
+			<result name="success">/printID.jsp</result>
+			<result name="error">/fail.jsp</result>
+			<result name="Already">/Already.jsp</result>
+		</action>
+
+
+
+		<action name="updown_Reports"
+			class="com.master.action.TripAction" method="fetchUpDownDetails">
+			<result name="success">/pages/form/updownReport.jsp</result>
+			<result name="fail">/pages/form/updownReport.jsp</result>
+		</action>
+
+		<action name="LR_form1" class="com.master.action.TripAction"
+			method="lrForm1">
+			<result name="success">/pages/form/LRForm1.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+
+		<action name="amount_issue_form"
+			class="com.master.action.TripAction" method="amtIssueForm">
+			<result name="success">/pages/form/amount_issue.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="insert_amountissue_action"
+			class="com.master.action.TripAction" method="amtissueinsert">
+			<result name="success" type="redirect">/success.jsp</result>
+			<result name="error">/fail.jsp</result>
+			<result name="Already">/Already.jsp</result>
+		</action>
+
+		<action name="trip_issue_form"
+			class="com.master.action.TripAction" method="tripIssueForm">
+			<result name="success">/pages/form/trip_issue.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="trip_issue_form1"
+			class="com.master.action.TripAction" method="tripIssueForm1">
+			<result name="success">/pages/form/trip_issue1.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="trip_issue_form2"
+			class="com.master.action.TripAction" method="tripIssueForm2">
+			<result name="success">/pages/form/trip_issue2.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="expense_form"
+			class="com.master.action.TripAction" method="expenseForm">
+			<result name="success">/pages/form/expense.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="trip_issue_form11"
+			class="com.master.action.TripAction" method="tripIssueForm11">
+			<result name="success">/pages/form/trip_issue11.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+		<action name="insert_tripissue_action11"
+			class="com.master.action.TripAction" method="tripissueinsert11">
+			<result name="success" type="redirect">/success.jsp</result>
+			<result name="insufficient">/insufficient.jsp</result>
+			<result name="error">/fail.jsp</result>
+			<result name="Already">/Already.jsp</result>
+		</action>
+
+		<action name="insert_tripissue_action1"
+			class="com.master.action.TripAction" method="tripissueinsert1">
+			<result name="success" type="redirect">/success.jsp</result>
+			<result name="insufficient">/insufficient.jsp</result>
+			<result name="error">/fail.jsp</result>
+			<result name="Already">/Already.jsp</result>
+		</action>
+
+
+		<action name="insert_tripissue_action2"
+			class="com.master.action.TripAction" method="tripissueinsert2">
+			<result name="success" type="redirect">/success.jsp</result>
+			<result name="insufficient">/insufficient.jsp</result>
+			<result name="error">/fail.jsp</result>
+			<result name="Already">/Already.jsp</result>
+		</action>
+
+
+
+		<action name="insert_expense_action"
+			class="com.master.action.TripAction" method="expenseinsert">
+			<result name="success" type="redirect">/success.jsp</result>
+			<result name="error">/fail.jsp</result>
+			<result name="Already">/Already.jsp</result>
+		</action>
+
+		<action name="trip_expense_Reports1"
+			class="com.master.action.TripAction"
+			method="fetchTripExpensesDetails1">
+			<result name="success">/pages/form/tripExpensesReport.jsp</result>
+			<result name="fail">/pages/form/tripExpensesReport.jsp</result>
+		</action>
+
+
+		<action name="trip_expense_Reports"
+			class="com.master.action.TripAction"
+			method="fetchTripExpensesDetails">
+			<result name="success">/pages/form/tripExpensesReport.jsp</result>
+			<result name="fail">/pages/form/tripExpensesReport.jsp</result>
+		</action>
+
+
+		<action name="trip_issue_Reports1"
+			class="com.master.action.TripAction" method="fetchTripIssueDetails1">
+			<result name="success">/pages/form/tripIssueReport.jsp</result>
+			<result name="fail">/pages/form/tripIssueReport.jsp</result>
+		</action>
+
+
+		<action name="trip_issue_Reports"
+			class="com.master.action.TripAction" method="fetchTripIssueDetails">
+			<result name="success">/pages/form/tripIssueReport.jsp</result>
+			<result name="fail">/pages/form/tripIssueReport.jsp</result>
+		</action>
+
+
+		<action name="updown_issue_Reports1"
+			class="com.master.action.TripAction"
+			method="fetchUpdownIssueDetails1">
+			<result name="success">/pages/form/updownIssueReport.jsp</result>
+			<result name="fail">/pages/form/updownIssueReport.jsp</result>
+		</action>
+
+
+		<action name="updown_issue_Reports"
+			class="com.master.action.TripAction" method="fetchUpdownIssueDetails">
+			<result name="success">/pages/form/updownIssueReport.jsp</result>
+			<result name="fail">/pages/form/updownIssueReport.jsp</result>
+		</action>
+
+
+
+		<action name="maintenance_form"
+			class="com.master.action.MaintenanceAction" method="maintenanceForm">
+			<result name="success">/pages/form/maintenance.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="insert_maintenance_action"
+			class="com.master.action.MaintenanceAction"
+			method="insert_maintenance_details">
+			<result name="success" type="redirect">/success.jsp</result>
+			<result name="error">/fail.jsp</result>
+			<result name="Already">/Already.jsp</result>
+		</action>
+
+		<action name="maintenance_Reports1"
+			class="com.master.action.MaintenanceAction"
+			method="fetchMaintenanceDetails1">
+			<result name="success">/pages/form/maintenanceHistoryReport.jsp</result>
+			<result name="fail">/pages/form/maintenanceHistoryReport.jsp</result>
+		</action>
+
+
+		<action name="maintenance_Reports"
+			class="com.master.action.MaintenanceAction"
+			method="fetchMaintenanceDetails">
+			<result name="success">/pages/form/maintenanceHistoryReport.jsp</result>
+			<result name="fail">/pages/form/maintenanceHistoryReport.jsp</result>
+		</action>
+
+
+		<action name="amount_issue_Reports1"
+			class="com.master.action.TripAction"
+			method="fetchAmountIssueDetails1">
+			<result name="success">/pages/form/amountIssueReport.jsp</result>
+			<result name="fail">/pages/form/amountIssueReport.jsp</result>
+		</action>
+
+
+		<action name="Deleteissueamount"
+			class="com.master.action.TripAction" method="deleteissueamount">
+			<result name="success">/Delete.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+
+		<action name="amount_issue_Reports"
+			class="com.master.action.TripAction" method="fetchAmountIssueDetails">
+			<result name="success">/pages/form/amountIssueReport.jsp</result>
+			<result name="fail">/pages/form/amountIssueReport.jsp</result>
+		</action>
+
+
+		<action name="expense_Reports1"
+			class="com.master.action.TripAction" method="fetchExpenseDetails1">
+			<result name="success">/pages/form/expenseReport.jsp</result>
+			<result name="fail">/pages/form/expenseReport.jsp</result>
+		</action>
+
+
+		<action name="expense_Reports"
+			class="com.master.action.TripAction" method="fetchExpenseDetails">
+			<result name="success">/pages/form/expenseReport.jsp</result>
+			<result name="fail">/pages/form/expenseReport.jsp</result>
+		</action>
+
+		<!-- <action name="delivery_done_form" class="com.master.action.DeliveryDoneAction" 
+			method="deliveryDoneForm"> <result name="success">/pages/form/deliverydone.jsp</result> 
+			<result name="fail">/fail.jsp</result> </action> -->
+
+
+
+
+
+		<action name="short_Reports"
+			class="com.master.action.DeliveryDoneAction"
+			method="fetchShortDetails1">
+			<result name="success">/pages/form/shortReport.jsp</result>
+			<result name="fail">/pages/form/shortReport.jsp</result>
+		</action>
+
+		<action name="short_Reports1"
+			class="com.master.action.DeliveryDoneAction"
+			method="fetchShortDetails">
+			<result name="success">/pages/form/shortReport.jsp</result>
+			<result name="fail">/pages/form/shortReport.jsp</result>
+		</action>
+
+
+		<action name="vehicle_alert_report"
+			class="com.master.action.VehicleMasterAction"
+			method="fetchVehicleAlertDetails">
+			<result name="success">/pages/form/vehicleAlertReport.jsp</result>
+			<result name="fail">/pages/form/vehicleAlertReport.jsp</result>
+		</action>
+
+
+
+
+		<action name="commision_form"
+			class="com.master.action.DeliveryDoneAction" method="commisionForm">
+			<result name="success">/pages/form/commision.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="invoice_form"
+			class="com.master.action.DeliveryDoneAction" method="invoiceForm">
+			<result name="success">/pages/form/invoice1.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+
+		<action name="insert_commission_action"
+			class="com.master.action.DeliveryDoneAction"
+			method="commissioninsert">
+			<result name="success" type="redirect">/success.jsp</result>
+			<result name="error">/fail.jsp</result>
+			<result name="Already">/Already.jsp</result>
+		</action>
+
+		<action name="insert_commission1_action"
+			class="com.master.action.DeliveryDoneAction"
+			method="commissioninsert1">
+			<result name="success" type="redirect">/success.jsp</result>
+			<result name="error">/fail.jsp</result>
+			<result name="Already">/Already.jsp</result>
+		</action>
+
+
+		<action name="commForm"
+			class="com.master.action.DeliveryDoneAction" method="commisionForm1">
+			<result name="success">/pages/form/commision1.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="gettaxnhsn"
+			class="com.master.action.LRmodule.LR_module_Action"
+			method="gettaxnhsn">
+			<result name="success">/lrmodule/getspareprice.jsp</result>
+			<result name="error">/Error.jsp</result>
+		</action>
+
+		<action name="Add_invoice1"
+			class="com.master.action.DeliveryDoneAction"
+			method="Add_New_invoice1">
+			<result name="success">/pages/form/invoiceprint.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="Add_invoice_Igst"
+			class="com.master.action.DeliveryDoneAction"
+			method="Add_New_invoice_Igst">
+			<result name="success">/pages/form/invoiceprintIgst.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="invForm"
+			class="com.master.action.DeliveryDoneAction" method="invForm1">
+			<result name="success">/pages/form/inv1.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="Add_invoice2"
+			class="com.master.action.DeliveryDoneAction"
+			method="Add_New_invoice2">
+			<result name="success">/pages/form/invoiceprint.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+
+		<action name="transporter_commission_Reports"
+			class="com.master.action.DeliveryDoneAction"
+			method="transporter_comm_reports">
+			<result name="success">/pages/form/transporterCommReport.jsp</result>
+			<result name="fail">/pages/form/transporterCommReport.jsp</result>
+		</action>
+
+		<action name="transporter_commission_Reports1"
+			class="com.master.action.DeliveryDoneAction"
+			method="transporter_comm_reports1">
+			<result name="success">/pages/form/transporterCommReport.jsp</result>
+			<result name="fail">/pages/form/transporterCommReport.jsp</result>
+		</action>
+
+
+		<action name="invoice_Reports"
+			class="com.master.action.DeliveryDoneAction" method="invoice_reports">
+			<result name="success">/pages/form/invReport.jsp</result>
+			<result name="fail">/pages/form/invReport.jsp</result>
+		</action>
+
+
+		<action name="profit_Reports1"
+			class="com.master.action.DeliveryDoneAction" method="profit_Reports1">
+			<result name="success">/pages/form/profitReport.jsp</result>
+			<result name="fail">/pages/form/profitReport.jsp</result>
+		</action>
+
+		<action name="updown_profit_Reports1"
+			class="com.master.action.DeliveryDoneAction"
+			method="updown_profit_Reports1">
+			<result name="success">/pages/form/updown_profitReport.jsp</result>
+			<result name="fail">/pages/form/updown_profitReport.jsp</result>
+		</action>
+
+		<action name="lr_profit_Reports1"
+			class="com.master.action.DeliveryDoneAction"
+			method="lr_profit_Reports1">
+			<result name="success">/pages/form/lr_profitReport.jsp</result>
+			<result name="fail">/pages/form/lr_profitReport.jsp</result>
+		</action>
+
+
+
+
+
+		<action name="profit_Reports"
+			class="com.master.action.DeliveryDoneAction" method="profit_Reports">
+			<result name="success">/pages/form/profitReport.jsp</result>
+			<result name="fail">/pages/form/profitReport.jsp</result>
+		</action>
+
+		<action name="updown_profit_Reports"
+			class="com.master.action.DeliveryDoneAction"
+			method="updown_profit_Reports">
+			<result name="success">/pages/form/updown_profitReport.jsp</result>
+			<result name="fail">/pages/form/updown_profitReport.jsp</result>
+		</action>
+
+		<action name="lr_profit_Reports"
+			class="com.master.action.DeliveryDoneAction"
+			method="lr_profit_Reports">
+			<result name="success">/pages/form/lr_profitReport.jsp</result>
+			<result name="fail">/pages/form/lr_profitReport.jsp</result>
+		</action>
+
+
+		<action name="vehicle_profitability_report1"
+			class="com.master.action.DeliveryDoneAction" method="vehicleProfit1">
+			<result name="success">/pages/form/vehicleprofitReport.jsp</result>
+			<result name="fail">/pages/form/vehicleprofitReport.jsp</result>
+		</action>
+
+
+		<action name="vehicle_profitability_report"
+			class="com.master.action.DeliveryDoneAction" method="vehicleProfit">
+			<result name="success">/pages/form/vehicleprofitReport.jsp</result>
+			<result name="fail">/pages/form/vehicleprofitReport.jsp</result>
+		</action>
+
+
+		<action name="sale_report"
+			class="com.master.action.DeliveryDoneAction" method="saleReport">
+			<result name="success">/pages/form/saleReport.jsp</result>
+			<result name="fail">/pages/form/saleReport.jsp</result>
+		</action>
+
+
+		<action name="sale_report1"
+			class="com.master.action.DeliveryDoneAction" method="saleReport1">
+			<result name="success">/pages/form/saleReport.jsp</result>
+			<result name="fail">/pages/form/saleReport.jsp</result>
+		</action>
+
+
+
+
+		<action name="UpdateInvoice"
+			class="com.master.action.DeliveryDoneAction"
+			method="fetchForUpdateInvoice">
+			<result name="success">/pages/form/inv_edit.jsp</result>
+			<result name="success1">/pages/form/inv_edit2.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="Edit_Invoice"
+			class="com.master.action.DeliveryDoneAction" method="edit_invoice">
+			<result name="success">/pages/form/invoiceprint.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="transporter_business_alert_report"
+			class="com.master.action.DeliveryDoneAction"
+			method="transporterBussReduce">
+			<result name="success">/pages/form/transporterBussinessReduceReport.jsp</result>
+			<result name="fail">/pages/form/transporterBussinessReduceReport.jsp</result>
+		</action>
+
+
+		<action name="vehicle_comparison_graph"
+			class="com.master.action.DeliveryDoneAction"
+			method="vehicleCompareGraph">
+			<result name="success">/pages/form/vehicleCompareGraph.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="monthly_business_graph"
+			class="com.master.action.DeliveryDoneAction"
+			method="monthlyBusinessGraph">
+			<result name="success">/pages/form/MonthlyBusinessgraph.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="monthly_shortweight_graph"
+			class="com.master.action.DeliveryDoneAction"
+			method="monthlyShortWeightGraph">
+			<result name="success">/pages/form/MonthlyShortWeight.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="monthly_trips_graph"
+			class="com.master.action.DeliveryDoneAction"
+			method="monthlyTripsGraph">
+			<result name="success">/pages/form/MonthlyTrips.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+
+
+
+
+
+		<action name="transporter_payment"
+			class="com.master.action.PaymentAction1" method="openbill">
+			<result name="success">/pages/form/TransporterPayment.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="CommissionSearch1"
+			class="com.master.action.PaymentAction1" method="commissionsearch1">
+
+			<result name="success">/pages/form/displaycommission1.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="inserttransporterpaymentv"
+			class="com.master.action.PaymentAction1"
+			method="inserttransporterpaymentv">
+			<result name="success">/Generate_Voucher_NO.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="customer_payment"
+			class="com.master.action.PaymentAction1" method="openbill1">
+			<result name="success">/pages/form/CustomerPayment1.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="insertcustomerpaymentv1"
+			class="com.master.action.PaymentAction1"
+			method="insertcustomerpaymentv">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="transporter_outstanding_report"
+			class="com.master.action.PaymentAction1"
+			method="transporter_outstanding_report">
+			<result name="success">/pages/form/transporterOutstandingReport.jsp</result>
+			<result name="fail">/pages/form/transporterOutstandingReport.jsp</result>
+		</action>
+
+		<action name="customer_outstanding_report"
+			class="com.master.action.PaymentAction1"
+			method="customer_outstanding_report">
+			<result name="success">/pages/form/customerOutstandingReport.jsp</result>
+			<result name="fail">/pages/form/customerOutstandingReport.jsp</result>
+		</action>
+
+		<action name="transporter_payment_report"
+			class="com.master.action.PaymentAction1"
+			method="transporter_payment_report">
+			<result name="success">/pages/form/transporterPayReport.jsp</result>
+			<result name="fail">/pages/form/transporterPayReport.jsp</result>
+		</action>
+
+		<action name="transporter_payment_report1"
+			class="com.master.action.PaymentAction1"
+			method="transporter_payment_report1">
+			<result name="success">/pages/form/transporterPayReport.jsp</result>
+			<result name="fail">/pages/form/transporterPayReport.jsp</result>
+		</action>
+
+		<action name="customer_payment_report"
+			class="com.master.action.PaymentAction1"
+			method="customer_payment_report">
+			<result name="success">/pages/form/customerPayReport.jsp</result>
+			<result name="fail">/pages/form/customerPayReport.jsp</result>
+		</action>
+
+
+		<action name="customer_payment_report1"
+			class="com.master.action.PaymentAction1"
+			method="customer_payment_report1">
+			<result name="success">/pages/form/customerPayReport.jsp</result>
+			<result name="fail">/pages/form/customerPayReport.jsp</result>
+		</action>
+		<action name="manager_ledger_report1"
+			class="com.master.action.TripAction" method="managerLedgerReport1">
+			<result name="success">/pages/form/managerLedgerReport.jsp</result>
+			<result name="fail">/pages/form/managerLedgerReport.jsp</result>
+		</action>
+		<action name="manager_ledger_report"
+			class="com.master.action.TripAction" method="managerLedgerReport">
+			<result name="success">/pages/form/managerLedgerReport.jsp</result>
+			<result name="fail">/pages/form/managerLedgerReport.jsp</result>
+		</action>
+		<action name="Manager_Credit_Advance_Reportv"
+			class="com.master.action.TripAction"
+			method="Manager_Credit_Advance_Reportv">
+			<result name="success">/pages/form/Manager_Credit_Debit_Report.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="Manager_Credit_Advance_Report_Submitv"
+			class="com.master.action.TripAction"
+			method="Manager_Credit_Advance_Report_Submitv">
+			<result name="success">/pages/form/Manager_Credit_Debit_Report.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="Transporter_Credit_Advance_Reportv"
+			class="com.master.action.TripAction"
+			method="Transporter_Credit_Advance_Reportv">
+			<result name="success">/pages/form/Transporter_Credit_Debit_Report.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="Supervisor_Credit_Advance_Reportv"
+			class="com.master.action.TripAction"
+			method="supervisor_Credit_Advance_Reportv">
+			<result name="success">/pages/form/Supervisor_Credit_Debit_Report2.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="Daily_Cash_Advance_Reportv"
+			class="com.master.action.TripAction"
+			method="daily_Cash_Advance_Reportv">
+			<result name="success">/pages/form/Daley_cash_Credit_Debit_Report3.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+
+		<action name="Escalation_Advance_Reportv"
+			class="com.master.action.TripAction"
+			method="escalation_Advance_Reportv">
+			<result name="success">/pages/form/escalationt_Report4.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+
+		<action name="Supervisor_Credit_Advance_Report_Submitv"
+			class="com.master.action.TripAction"
+			method="supervisor_Credit_Advance_Report_Submitv">
+			<result name="success">/pages/form/Supervisor_Credit_Debit_Report2.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="Daily_Cash_Advance_Report_Submitv"
+			class="com.master.action.TripAction"
+			method="daily_Cash_Credit_Advance_Report_Submitv">
+			<result name="success">/pages/form/Daley_cash_Credit_Debit_Report3.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="escalation_Report_Submitv"
+			class="com.master.action.TripAction"
+			method="escalation_Report_Submitv">
+			<result name="success">/pages/form/escalationt_Report4.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="Transporter_Credit_Advance_Report_Submitv"
+			class="com.master.action.TripAction"
+			method="Transporter_Credit_Advance_Report_Submitv">
+			<result name="success">/pages/form/Transporter_Credit_Debit_Report.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="Driver_Credit_Advance_Reportv"
+			class="com.master.action.TripAction"
+			method="Driver_Credit_Advance_Reportv">
+			<result name="success">/pages/form/Driver_Credit_Debit_Report.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="Driver_Credit_Advance_Report_Submitv"
+			class="com.master.action.TripAction"
+			method="Driver_Credit_Advance_Report_Submitv">
+			<result name="success">/pages/form/Driver_Credit_Debit_Report.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="Customer_Credit_Advance_Reportv"
+			class="com.master.action.TripAction"
+			method="Customer_Credit_Advance_Reportv">
+			<result name="success">/pages/form/Customer_Credit_Debit_Report.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+
+		<action name="Customer_Credit_Advance_Reportv123"
+			class="com.master.action.TripAction"
+			method="Customer_Credit_Advance_Reportv123">
+			<result name="success">/pages/form/Lr_performnsreport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="InsertCustCreditDebit"
+			class="com.master.action.TripAction" method="InsertCustCreditDebit">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="creditdebitnote_Credit_Advance_Reportv"
+			class="com.master.action.TripAction"
+			method="Customer_Credit_Advance_Reportv123">
+			<result name="success">/pages/form/creditdebitnoteCustomerPayment2.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="Customer_Credit_Advance_Report_Submitv"
+			class="com.master.action.TripAction"
+			method="Customer_Credit_Advance_Report_Submitv">
+			<result name="success">/pages/form/Customer_Credit_Debit_Report.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="Customer_Credit_Advance_Report_Submitv123"
+			class="com.master.action.TripAction"
+			method="Customer_Credit_Advance_Report_Submitv123">
+			<result name="success">/pages/form/Lr_performnsreport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="salary_form"
+			class="com.master.action.DriverMasterAction" method="salaryForm">
+			<result name="success">/pages/form/salaryForm.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="Insert_Driver_Salary"
+			class="com.master.action.DriverMasterAction"
+			method="driverSalaryInsert">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="salary_edit_delete_report"
+			class="com.master.action.DriverMasterAction"
+			method="salary_edit_delete_report">
+			<result name="success">/pages/form/salaryEditDeleteReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="Updatesalary"
+			class="com.master.action.DriverMasterAction"
+			method="fetchForSalaryUpdate">
+			<result name="success">/pages/form/editSalary.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="update_salary_details"
+			class="com.master.action.DriverMasterAction"
+			method="updateSalaryDetails">
+			<result name="success">/update.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="DeleteSalary"
+			class="com.master.action.DriverMasterAction" method="DeleteSalary">
+			<result name="success">/Delete.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+		<action name="salary_report"
+			class="com.master.action.DriverMasterAction" method="salary_report">
+			<result name="success">/pages/form/salaryGenerationReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="salary_report1"
+			class="com.master.action.DriverMasterAction" method="salary_report1">
+			<result name="success">/pages/form/salaryGenerationReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="submit_salary_report1"
+			class="com.master.action.DriverMasterAction"
+			method="submit_salary_report1">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="edit_salary_generation"
+			class="com.master.action.DriverMasterAction"
+			method="edit_salary_generation">
+			<result name="success">/pages/form/salaryGenerationEditReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="EditSalaryGenerate"
+			class="com.master.action.DriverMasterAction"
+			method="edit_salary_generation1">
+			<result name="success">/pages/form/salaryGenerationEditReport1.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="Salary_submit1"
+			class="com.master.action.DriverMasterAction"
+			method="submit_salary_report2">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="driver_payment_report"
+			class="com.master.action.DriverMasterAction" method="driverpayment">
+			<result name="success">/pages/form/salaryPaymentReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="driver_payment_report1"
+			class="com.master.action.DriverMasterAction" method="driverpayment1">
+			<result name="success">/pages/form/salaryPaymentReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="payment_submit"
+			class="com.master.action.DriverMasterAction" method="payment_submit">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="Enquiry"
+			class="com.master.action.Inquiry.Inquiry" method="execute">
+			<result name="success">/pages/form/EnquiryForm.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="InquiryInsert"
+			class="com.master.action.Inquiry.Inquiry" method="insert_inquiry">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="EnquiryReport"
+			class="com.master.action.Inquiry.Inquiry" method="fetchInquiryReport">
+			<result name="success">/pages/form/EnquiryReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+
+		<action name="EnquiryCancel"
+			class="com.master.action.Inquiry.Inquiry" method="enquiryCancel">
+			<result name="success">/cancel.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="EnquiryDone"
+			class="com.master.action.Inquiry.Inquiry" method="enquiryDone">
+			<result name="success">/pages/form/Pricing.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="InsertPricing"
+			class="com.master.action.Inquiry.Inquiry" method="insert_pricing">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="PricingReport"
+			class="com.master.action.Inquiry.Inquiry" method="fetchPricingReport">
+			<result name="success">/pages/form/PricingReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="PricingReport1"
+			class="com.master.action.Inquiry.Inquiry"
+			method="fetchPricingReport1">
+			<result name="success">/pages/form/PricingReport1.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="PricingCancel"
+			class="com.master.action.Inquiry.Inquiry" method="pricingCancel">
+			<result name="success">/pricingcancel.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="PricingEdit"
+			class="com.master.action.Inquiry.Inquiry" method="editPricing">
+			<result name="success">/pages/form/PricingEdit.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="UpdatePricing"
+			class="com.master.action.Inquiry.Inquiry" method="update_pricing">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="PricingQuotation"
+			class="com.master.action.Inquiry.Inquiry" method="quotation">
+			<result name="success">/pages/form/Quotation.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="PricingQuotation123"
+			class="com.master.action.Inquiry.Inquiry" method="quotation123">
+			<result name="success">/pages/form/Quotation.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="InsertQuotation"
+			class="com.master.action.Inquiry.Inquiry" method="insert_quotation">
+			<result name="success">/pages/form/QuotationPrint.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="QuotationReport"
+			class="com.master.action.Inquiry.Inquiry"
+			method="fetchQuotationReport">
+			<result name="success">/pages/form/QuotationReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="QuotationView"
+			class="com.master.action.Inquiry.Inquiry" method="quotation_view">
+			<result name="success">/pages/form/QuotationView.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="QuotationEdit"
+			class="com.master.action.Inquiry.Inquiry" method="quotation_view">
+			<result name="success">/pages/form/QuotationEdit.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="UpdateQuotation"
+			class="com.master.action.Inquiry.Inquiry" method="update_quotation">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="QuotationPrint"
+			class="com.master.action.Inquiry.Inquiry" method="quotation_print">
+			<result name="success">/pages/form/QuotationPrint.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="QuotationCancel"
+			class="com.master.action.Inquiry.Inquiry" method="quotationCancel">
+			<result name="success">/cancel.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="ReviseQuotationReport"
+			class="com.master.action.Inquiry.Inquiry" method="revise_Quotation">
+			<result name="success">/pages/form/ReviseQuotationReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="ReviseQuotationReport1"
+			class="com.master.action.Inquiry.Inquiry" method="revise_Quotation1">
+			<result name="success">/pages/form/ReviseQuotationReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="RevisedQuotationPrint"
+			class="com.master.action.Inquiry.Inquiry" method="quotation_print1">
+			<result name="success">/pages/form/RevisedQuotationPrint.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="QuotationFinal"
+			class="com.master.action.Inquiry.Inquiry" method="quotationFinal">
+			<result name="success">/pages/form/QuotationFinal.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="QuotationFinalSuccess"
+			class="com.master.action.Inquiry.Inquiry" method="quotationFinal1">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="PricingOrder"
+			class="com.master.action.Inquiry.Inquiry" method="order">
+			<result name="success">/pages/form/OrderForm.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="SessionOut"
+			class="com.master.action.Inquiry.Inquiry" method="SessionOut">
+			<result name="success" type="redirect">/SessionOut.jsp</result>
+		</action>
+		<action name="Login" class="com.master.action.Inquiry.Inquiry"
+			method="logout">
+			<result name="success">/login.jsp</result>
+
+		</action>
+
+
+		<action name="Add_New_Rate"
+			class="com.master.action.Inquiry.Inquiry" method="Add_New_Rate">
+			<result name="success">/success.jsp</result>
+			<result name="already">/already.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="InsertOrder"
+			class="com.master.action.Inquiry.Inquiry" method="insert_order">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="OrderReport"
+			class="com.master.action.Inquiry.Inquiry" method="fetchOrderReport">
+			<result name="success">/pages/form/OrderReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="OrderCancel"
+			class="com.master.action.Inquiry.Inquiry" method="orderCancel">
+			<result name="success">/cancel.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="EditRateMaster"
+			class="com.master.action.Inquiry.Inquiry" method="EditRateMaster">
+			<result name="success">/master/rateMasterEdit.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="OrderEdit"
+			class="com.master.action.Inquiry.Inquiry" method="orderEdit">
+			<result name="success">/pages/form/OrderEdit.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="UpdateOrder"
+			class="com.master.action.Inquiry.Inquiry" method="orderUpdate">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="OrderLRForm"
+			class="com.master.action.Inquiry.Inquiry" method="orderLr">
+			<result name="success">/pages/form/OrderLrForm.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="insert_lr_action"
+			class="com.master.action.TripAction" method="lrinsert">
+			<result name="success">/printLR.jsp</result>
+			<result name="error">/fail.jsp</result>
+		</action>
+
+
+		<action name="lr_Reports" class="com.master.action.TripAction"
+			method="fetchLRDetails">
+			<result name="success">/pages/form/lrReport.jsp</result>
+			<result name="fail">/pages/form/lrReport.jsp</result>
+		</action>
+
+
+		<action name="insert_tripissue_action"
+			class="com.master.action.TripAction" method="tripissueinsert">
+			<result name="success" type="redirect">/success.jsp</result>
+			<result name="insufficient">/insufficient.jsp</result>
+			<result name="error">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="Amount_issue"
+			class="com.master.action.TripAction" method="add_emp">
+
+			<result name="success">/pages/form/AmtIssue_form.jsp</result>
+
+		</action>
+
+
+		<action name="Amount_issue_Reports"
+			class="com.master.action.TripAction"
+			method="amount_issueProductMasterDetails">
+			<result name="success">/pages/form/Amount_issue_reports.jsp</result>
+			<result name="fail">/pages/form/Amount_issue_reports.jsp</result>
+		</action>
+
+
+
+		<action name="Updateamountissue"
+			class="com.master.action.TripAction" method="updateamountissue">
+			<result name="success">/pages/form/update_AmtIssue_form2.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="update_amount_issue_details"
+			class="com.master.action.TripAction"
+			method="update_amount_issue_details">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="insert_amt" class="com.master.action.TripAction"
+			method="insert_amt">
+
+			<result name="success">/success.jsp</result>
+
+			<result name="fail">/fail.jsp</result>
+
+		</action>
+
+
+
+		<action name="LR_View" class="com.master.action.TripAction"
+			method="orderLrView">
+			<result name="success">/pages/form/OrderLrFormView.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="LR_Edit" class="com.master.action.TripAction"
+			method="orderLrView">
+			<result name="success">/pages/form/OrderLrFormEdit.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="update_lr_action"
+			class="com.master.action.TripAction" method="lrupdate">
+			<result name="success" type="redirect">/success.jsp</result>
+			<result name="error">/fail.jsp</result>
+		</action>
+
+
+		<action name="insert_delivery_done_action"
+			class="com.master.action.DeliveryDoneAction"
+			method="deliverydoneinsert">
+			<result name="success" type="redirect">/success.jsp</result>
+			<result name="error">/fail.jsp</result>
+
+		</action>
+
+
+
+		<action name="delivery_done_Reports1"
+			class="com.master.action.DeliveryDoneAction"
+			method="fetchDeliveryDoneDetails">
+			<result name="success">/pages/form/deliverydoneReport.jsp</result>
+			<result name="fail">/pages/form/deliverydoneReport.jsp</result>
+		</action>
+
+
+
+		<action name="Cancel_lr" class="com.master.action.TripAction"
+			method="lrCancel">
+			<result name="success">/cancel.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="OrderCommonLr"
+			class="com.master.action.Inquiry.Inquiry" method="orderLrCommon">
+			<result name="success">/pages/form/OrderLrFormCommon.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="invoice_form_igst"
+			class="com.master.action.DeliveryDoneAction" method="invoiceFormIgst">
+			<result name="success">/pages/form/invoiceIgst.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="PriceCheck"
+			class="com.master.action.Inquiry.Inquiry"
+			method="fetchPriceCheckReport">
+			<result name="success">/pages/form/PriceCheckReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="LrStatus" class="com.master.action.TripAction"
+			method="orderLrViewaabb">
+			<result name="success">/pages/form/LrStatus.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="LrChitChat" class="com.master.action.TripAction"
+			method="aa">
+			<result name="success">/pages/form/LrChitChat.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="InsertLrStatus"
+			class="com.master.action.TripAction" method="insert_status">
+			<result name="success">/pages/form/lrReport.jsp</result>
+			<result name="fail">/pages/form/lrReport.jsp</result>
+		</action>
+
+
+		<action name="InsertLrChitChat"
+			class="com.master.action.TripAction" method="insert_chitchat">
+			<result name="success">/pages/form/lrReport.jsp</result>
+			<result name="fail">/pages/form/lrReport.jsp</result>
+		</action>
+
+
+
+
+		<action name="invoice_form_wo_tax"
+			class="com.master.action.DeliveryDoneAction"
+			method="invoiceFormwoTax">
+			<result name="success">/pages/form/InvoiceWoTax.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="assignBillwotax"
+			class="com.master.action.Job_card_action1" method="openbill">
+
+			<result name="success">/pages/form/invoicewotax.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="Add_invoice_wotax"
+			class="com.master.action.invoice_action1"
+			method="Add_New_invoice_wotax">
+
+			<result name="NotSUffqty">/NotSuffqty.jsp</result>
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+			<result name="print3">/pages/forms/ifc_p_pedidos_printout3_invoice_wotax.jsp
+			</result>
+		</action>
+
+
+
+		<action name="resource_enquiry_graph"
+			class="com.master.action.DeliveryDoneAction"
+			method="resourceEnquiryGraph">
+			<result name="success">/pages/form/ResourceEnquiryGraph.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="resource_enquiry_graph1"
+			class="com.master.action.DeliveryDoneAction"
+			method="resourceEnquiryGraph1">
+			<result name="success">/pages/form/ResourceEnquiryGraph1.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="order_lost_graph"
+			class="com.master.action.DeliveryDoneAction" method="orderlostGraph">
+			<result name="success">/pages/form/OrderLostGraph.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+
+
+
+		<action name="VehicleTypeMaster"
+			class="com.master.action.Vehicle_Type_Master_Action" method="execute">
+
+			<result name="success">/master/VehicleTypeMaster.jsp</result>
+
+		</action>
+
+
+		<action name="Add_VehicleTypeMaster"
+			class="com.master.action.Vehicle_Type_Master_Action"
+			method="insertVehicleTypeMaster">
+
+			<result name="success">/success.jsp</result>
+			<result name="already">/already.jsp</result>
+			<result name="fail">/fail.jsp</result>
+
+		</action>
+
+
+		<action name="VehicleTypeMasterReport"
+			class="com.master.action.Vehicle_Type_Master_Action"
+			method="displayVehicleTypeMaster">
+
+			<result name="display">/master/VehicleTypeMasterReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+
+		</action>
+
+
+		<action name="Delete_VehicleTypeMaster"
+			class="com.master.action.Vehicle_Type_Master_Action"
+			method="deleteVehicleTypeMaster">
+
+			<result name="deleteVehicleTypeMaster">/master/VehicleTypeMasterReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+
+		</action>
+
+
+		<action name="Edit_VehicleTypeMaster"
+			class="com.master.action.Vehicle_Type_Master_Action"
+			method="editVehicleTypeMaster">
+
+			<result name="editVehicleTypeMaster">/master/VehicleTypeMasterEdit.jsp</result>
+			<result name="fail">/fail.jsp</result>
+
+		</action>
+
+
+		<action name="Update_VehicleTypeMaster"
+			class="com.master.action.Vehicle_Type_Master_Action"
+			method="updateVehicleTypeMaster">
+
+			<result name="updateVehicleTypeMaster">/master/VehicleTypeMasterReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+
+		</action>
+
+
+
+
+
+		<action name="ResourceTypeMaster"
+			class="com.master.action.Resource_Type_Master_Action"
+			method="execute">
+
+			<result name="success">/master/ResourceTypeMaster.jsp</result>
+
+		</action>
+
+
+		<action name="Add_ResourceTypeMaster"
+			class="com.master.action.Resource_Type_Master_Action"
+			method="insertResourceTypeMaster">
+
+			<result name="success">/success.jsp</result>
+			<result name="already">/already.jsp</result>
+			<result name="fail">/fail.jsp</result>
+
+		</action>
+
+
+		<action name="ResourceTypeMasterReport"
+			class="com.master.action.Resource_Type_Master_Action"
+			method="displayResourceTypeMaster">
+
+			<result name="display">/master/ResourceTypeMasterReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+
+		</action>
+
+
+		<action name="Delete_ResourceTypeMaster"
+			class="com.master.action.Resource_Type_Master_Action"
+			method="deleteResourceTypeMaster">
+
+			<result name="deleteResourceTypeMaster">/master/ResourceTypeMasterReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+
+		</action>
+
+
+		<action name="Edit_ResourceTypeMaster"
+			class="com.master.action.Resource_Type_Master_Action"
+			method="editResourceTypeMaster">
+
+			<result name="editResourceTypeMaster">/master/ResourceTypeMasterEdit.jsp</result>
+			<result name="fail">/fail.jsp</result>
+
+		</action>
+
+
+		<action name="Update_ResourceTypeMaster"
+			class="com.master.action.Resource_Type_Master_Action"
+			method="updateResourceTypeMaster">
+
+			<result name="updateResourceTypeMaster">/master/ResourceTypeMasterReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+
+		</action>
+
+
+
+
+
+		<action name="ReasonTypeMaster"
+			class="com.master.action.Reason_Type_Master_Action" method="execute">
+
+			<result name="success">/master/ReasonTypeMaster.jsp</result>
+
+		</action>
+
+
+		<action name="Add_ReasonTypeMaster"
+			class="com.master.action.Reason_Type_Master_Action"
+			method="insertReasonTypeMaster">
+
+			<result name="success">/success.jsp</result>
+			<result name="already">/already.jsp</result>
+			<result name="fail">/fail.jsp</result>
+
+		</action>
+
+
+		<action name="ReasonTypeMasterReport"
+			class="com.master.action.Reason_Type_Master_Action"
+			method="displayReasonTypeMaster">
+
+			<result name="display">/master/ReasonTypeMasterReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+
+		</action>
+
+
+		<action name="Delete_ReasonTypeMaster"
+			class="com.master.action.Reason_Type_Master_Action"
+			method="deleteReasonTypeMaster">
+
+			<result name="deleteReasonTypeMaster">/master/ReasonTypeMasterReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+
+		</action>
+
+
+		<action name="Edit_ReasonTypeMaster"
+			class="com.master.action.Reason_Type_Master_Action"
+			method="editReasonTypeMaster">
+
+			<result name="editReasonTypeMaster">/master/ReasonTypeMasterEdit.jsp</result>
+			<result name="fail">/fail.jsp</result>
+
+		</action>
+
+
+		<action name="Update_ReasonTypeMaster"
+			class="com.master.action.Reason_Type_Master_Action"
+			method="updateReasonTypeMaster">
+
+			<result name="updateReasonTypeMaster">/master/ReasonTypeMasterReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+
+		</action>
+
+
+
+
+
+		<action name="VendorBill" class="com.master.action.Dc_action"
+			method="MakeInvoice">
+
+			<result name="success">/pages/form/invoiceVendor.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="Add_invoice_vendor"
+			class="com.master.action.invoice_action1" method="Add_New_invoice">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="VendorBillView"
+			class="com.master.action.Dc_action" method="billView">
+
+			<result name="success">/pages/form/invoiceVendorView.jsp</result>
+			<result name="success1">/pages/form/invoiceIgstView.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="VendorBillEdit"
+			class="com.master.action.Dc_action" method="billView">
+
+			<result name="success">/pages/form/invoiceVendorEdit.jsp</result>
+			<result name="success1">/pages/form/invoiceIgstEdit.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="VendorBillReport"
+			class="com.master.action.Dc_action" method="displayBillReport">
+
+			<result name="display">/pages/form/BillApproveReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="business_graph"
+			class="com.master.action.DeliveryDoneAction" method="businessGraph">
+			<result name="success">/pages/form/BusinessGraph.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="exim_graph"
+			class="com.master.action.DeliveryDoneAction" method="eximyGraph">
+			<result name="success">/pages/form/EximGraph.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="DeliveryAlertReport"
+			class="com.master.action.Inquiry.Inquiry"
+			method="deliveryAlertReport">
+			<result name="success">/pages/form/DeliveryAlertReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="AlertForm"
+			class="com.master.action.Inquiry.Inquiry" method="alert">
+			<result name="success">/pages/form/AlertForm.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="AlertInsert"
+			class="com.master.action.Inquiry.Inquiry" method="insert_alert">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+		<action name="AlertEdit"
+			class="com.master.action.Inquiry.Inquiry" method="alertEdit">
+			<result name="success">/pages/form/AlertFormEdit.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="AlertUpdate"
+			class="com.master.action.Inquiry.Inquiry" method="alertUpdate">
+			<result name="success">/pages/form/AlertReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="AlertDone"
+			class="com.master.action.Inquiry.Inquiry" method="alertDone">
+			<result name="success">/pages/form/AlertReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="AlertReport"
+			class="com.master.action.Inquiry.Inquiry" method="alertReport">
+			<result name="success">/pages/form/AlertReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="AlertDoneReport"
+			class="com.master.action.Inquiry.Inquiry" method="alertDoneReport">
+			<result name="success">/pages/form/AlertDoneReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="AlertExpectedReport"
+			class="com.master.action.Inquiry.Inquiry"
+			method="alertExpectedReport">
+			<result name="success">/pages/form/AlertExpectedReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="AlertEdit1"
+			class="com.master.action.Inquiry.Inquiry" method="alertEdit1">
+			<result name="success">/pages/form/AlertFormEdit1.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="AlertUpdate1"
+			class="com.master.action.Inquiry.Inquiry" method="alertUpdate1">
+			<result name="success">/pages/form/AlertExpectedReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="AlertDone1"
+			class="com.master.action.Inquiry.Inquiry" method="alertDone1">
+			<result name="success">/pages/form/AlertExpectedReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="PriceCheckReport"
+			class="com.master.action.Inquiry.Inquiry" method="price_check">
+			<result name="success">/pages/form/PriceCheckReport2.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="PriceCheckReport123"
+			class="com.master.action.Inquiry.Inquiry" method="price_check">
+			<result name="success">/pages/form/PriceingReport3.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="PriceCheckReportSuccess"
+			class="com.master.action.Inquiry.Inquiry"
+			method="fetchPriceCheckReport1">
+			<result name="success">/pages/form/PriceCheckReport2.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="PriceCheckReportSuccess123"
+			class="com.master.action.Inquiry.Inquiry"
+			method="fetchPriceCheckReport123">
+			<result name="success">/pages/form/PriceingReport3.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+		<action name="PriceCheckForm"
+			class="com.master.action.Inquiry.Inquiry" method="priceForm">
+			<result name="success">/pages/form/PriceCheckForm.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="PriceCheckForm123"
+			class="com.master.action.Inquiry.Inquiry" method="priceForm">
+			<result name="success">/pages/form/PriceingForm2.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="InsertPricingCheck"
+			class="com.master.action.Inquiry.Inquiry"
+			method="insert_pricing_check">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="InsertPricingCheck123"
+			class="com.master.action.Inquiry.Inquiry"
+			method="insert_pricing_check123">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="getCustomerDetails"
+			class="com.master.action.CustomerMasterAction"
+			method="fetchCustDetails">
+			<result name="success">/fetch/details2.jsp</result>
+			<result name="error">/Error.jsp</result>
+		</action>
+
+
+		<action name="Add_New_Location"
+			class="com.master.action.Inquiry.Inquiry" method="Add_New_Location">
+
+			<result name="success">/pages/form/EnquiryForm.jsp</result>
+			<result name="fail">/fail.jsp</result>
+			<result name="already">/already.jsp</result>
+		</action>
+
+
+
+		<action name="Add_New_Transporter"
+			class="com.master.action.Inquiry.Inquiry"
+			method="Add_New_Transporter">
+
+			<result name="success">/pages/form/Pricing.jsp</result>
+			<result name="fail">/fail.jsp</result>
+			<result name="already">/already.jsp</result>
+		</action>
+
+
+		<action name="exim_graph1"
+			class="com.master.action.DeliveryDoneAction" method="eximyGraph1">
+			<result name="success">/pages/form/EximGraph2.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="exim_graph12"
+			class="com.master.action.DeliveryDoneAction" method="eximyGraph12">
+			<result name="success">/pages/form/shipmentGraph3.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="exim_graph123"
+			class="com.master.action.DeliveryDoneAction" method="eximyGraph123">
+			<result name="success">/pages/form/rootGraph4.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="FetchLrChitChat"
+			class="com.master.action.Inquiry.Inquiry" method="fetchSchemeDetails">
+			<result name="success">/pages/form/SchemeDetails.jsp</result>
+			<result name="nodata">/nodata.jsp</result>
+			<result name="error">/Error.jsp</result>
+		</action>
+
+
+
+		<action name="CompanyContactForm"
+			class="com.master.action.Inquiry.Inquiry" method="company">
+			<result name="success">/pages/form/CompanyContactForm.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="CompanyContactInsert"
+			class="com.master.action.Inquiry.Inquiry" method="insert_company">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="CompanyContactEdit"
+			class="com.master.action.Inquiry.Inquiry" method="companyEdit">
+			<result name="success">/pages/form/CompanyContactFormEdit.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="CompanyContactUpdate"
+			class="com.master.action.Inquiry.Inquiry" method="companyUpdate">
+			<result name="success">/pages/form/ComapnyContactReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="CompanyContactDelete"
+			class="com.master.action.Inquiry.Inquiry" method="companyDelete">
+			<result name="success">/pages/form/ComapnyContactReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="CompanyContactReport"
+			class="com.master.action.Inquiry.Inquiry" method="companyReport">
+			<result name="success">/pages/form/ComapnyContactReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="VehicleChange"
+			class="com.master.action.Inquiry.Inquiry" method="vehicleChange">
+			<result name="success">/pages/form/VehicleChange.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="VehicleChangeSuccess"
+			class="com.master.action.Inquiry.Inquiry"
+			method="vehicleChangeSuccess">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="delivery_done_form"
+			class="com.master.action.TripAction" method="delivery_done">
+			<result name="success">/pages/form/DeliveryDoneForm.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="insert_delivery_action"
+			class="com.master.action.TripAction" method="deliveryinsert">
+			<result name="success">/success.jsp</result>
+			<result name="error">/fail.jsp</result>
+		</action>
+
+		<!-- <action name="delivery_done_Reports1" class="com.master.action.DeliveryDoneAction" 
+			method="fetchDeliveryDoneDetails"> <result name="success">/pages/form/deliverydoneReport.jsp</result> 
+			<result name="fail">/pages/form/deliverydoneReport.jsp</result> </action> -->
+
+
+		<action name="CommonInvoice"
+			class="com.master.action.Inquiry.Inquiry"
+			method="assignCommonInvoice">
+			<result name="success">/pages/form/CommonInvoice.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="InvoiceSubmit"
+			class="com.master.action.Inquiry.Inquiry"
+			method="commonInvoiceSubmit">
+
+			<result name="success">/pages/form/invoicePrintWithoutTax.jsp</result>
+			<result name="already">/already.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="CommonInvoiceCgst"
+			class="com.master.action.Dc_action" method="CommonInvoiceCgst">
+
+			<result name="success">/pages/form/invoiceCustomerCgst.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="Add_invoice_Customer"
+			class="com.master.action.invoice_action1"
+			method="Add_invoice_Customer">
+			<result name="success">/pages/form/invoiceCgstPrint.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="CommonInvoiceIgst"
+			class="com.master.action.Dc_action" method="CommonInvoiceIgst">
+
+			<result name="success">/pages/form/invoiceCustomerIgst.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="Add_invoice_Customer_Igst"
+			class="com.master.action.invoice_action1"
+			method="Add_invoice_Customer_Igst">
+			<result name="success">/pages/form/invoiceIgstPrint.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="SalesRegister"
+			class="com.master.action.Purchase_action"
+			method="displaysalesRegister">
+
+			<result name="success">/pages/form/collection_summary1.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="EnquiryReport2"
+			class="com.master.action.Purchase_action" method="enquiryReport">
+
+			<result name="success">/pages/form/enquiryReport2.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="LRReport2"
+			class="com.master.action.Purchase_action" method="LRReport2">
+
+			<result name="success">/pages/form/LRReport2.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="LRReportDetails"
+			class="com.master.action.Purchase_action" method="LRReportDetails">
+
+			<result name="success">/pages/form/LRReport2.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="monthlybooking"
+			class="com.master.action.Purchase_action" method="monthlybooking">
+
+			<result name="success">/pages/form/monthlybooking.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="monthlybookingdetails"
+			class="com.master.action.Purchase_action"
+			method="monthlybookingdetails">
+
+			<result name="success">/pages/form/monthlybooking.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="collection_summary_tax"
+			class="com.master.action.Purchase_action"
+			method="collection_summary_tax">
+
+			<result name="success">/pages/form/collection_summary1.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="EnquiryReportDetails"
+			class="com.master.action.Purchase_action"
+			method="enquiryReportDetails">
+
+			<result name="success">/pages/form/enquiryReport2.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="BillView" class="com.master.action.Dc_action"
+			method="billView">
+
+			<result name="success">/pages/form/invoiceView.jsp</result>
+			<result name="success1">/pages/form/invoiceIgstView.jsp</result>
+			<result name="success2">/pages/form/CommonInvoiceView.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="BillEdit" class="com.master.action.Dc_action"
+			method="billView">
+
+			<result name="success">/pages/form/InvoiceEdit.jsp</result>
+			<result name="success1">/pages/form/invoiceIgstEdit.jsp</result>
+			<result name="success2">/pages/form/CommonInvoiceEdit.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="InvoiceReport"
+			class="com.master.action.Dc_action" method="displayInvoiceReport">
+
+			<result name="display">/pages/form/InvoiceReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="InvoiceUpdateCommon"
+			class="com.master.action.Inquiry.Inquiry"
+			method="commonInvoiceUpdate">
+			<result name="success">/pages/form/invoicePrintWithoutTax.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="InvoiceUpdateCommon12"
+			class="com.master.action.Inquiry.Inquiry"
+			method="commonInvoiceUpdate12">
+			<result name="success">/pages/form/invoicePrintWithoutTax.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="custcdreport"
+			class="com.master.action.TripAction"
+			method="Customer_Credit_Advance_Reportv123">
+			<result name="success">/pages/form/Customer_Credit_Debitnote_Report2.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+
+		<action name="supcdreport" class="com.master.action.TripAction"
+			method="Customer_Credit_Advance_Reportv123">
+			<result name="success">/pages/form/supplier_Credit_Debitnote_Report3.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="CustomerCreditDebitNote"
+			class="com.master.action.TripAction" method="CustCreditNoteReport">
+			<result name="success">/pages/form/Customer_Credit_Debitnote_Report2.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="SupplierCreditDebitNote"
+			class="com.master.action.TripAction" method="SupCreditNoteReport">
+			<result name="success">/pages/form/supplier_Credit_Debitnote_Report3.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="cust_details"
+			class="com.master.action.LRmodule.LR_module_Action"
+			method="custdetails">
+			<result name="success">/pages/form/getspareprice.jsp</result>
+			<result name="error">/Error.jsp</result>
+		</action>
+
+		<action name="manualsmssend"
+			class="com.master.action.Inquiry.Inquiry" method="manualsmssend">
+			<result name="success">/successSMSSEND.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+		<!-- new start -->
+
+
+		<action name="Billprintnew" class="com.master.action.Dc_action"
+			method="billView">
+			<result name="success">/pages/form/NewPrintInvoiceEdit2.jsp</result>
+			<result name="success1">/pages/form/NewPrintinvoiceIgstEdit2.jsp</result>
+			<result name="success2">/pages/form/NewPrintCommonInvoiceEdit2.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="newlr_Reports"
+			class="com.master.action.TripAction" method="aa">
+			<result name="success">/pages/form/NewlrReport2.jsp</result>
+			<result name="fail">/pages/form/NewlrReport2.jsp</result>
+		</action>
+		<action name="shownewlr_Reports"
+			class="com.master.action.TripAction" method="newfetchLRDetails">
+			<result name="success">/pages/form/NewlrReport2.jsp</result>
+			<result name="fail">/pages/form/NewlrReport2.jsp</result>
+		</action>
+
+
+		<!--new end -->
+
+
+
+
+		<action name="Billprintnewwiout"
+			class="com.master.action.Dc_action" method="billView">
+			<result name="success">/pages/form/NewheadPrintInvoiceEdit3.jsp</result>
+			<result name="success1">/pages/form/NewheadPrintinvoiceIgstEdit3.jsp</result>
+			<result name="success2">/pages/form/NewheadPrintCommonInvoiceEdit3.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+
+		<action name="InvoiceheadUpdateCommon12"
+			class="com.master.action.Inquiry.Inquiry"
+			method="commonInvoiceUpdate12">
+			<result name="success">/pages/form/newinvoicePrintWithoutTax2.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="Add_invoice_Customernews"
+			class="com.master.action.invoice_action1"
+			method="Add_invoice_Customer">
+			<result name="success">/pages/form/newinvoiceCgstPrint2.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="Add_invoice_Customer_Igsthead"
+			class="com.master.action.invoice_action1"
+			method="Add_invoice_Customer_Igst">
+			<result name="success">/pages/form/newinvoiceIgstPrint2.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+
+
+
+
+
+
+		<action name="pi_done_form"
+			class="com.master.action.TripAction" method="delivery_done">
+			<result name="success">/pages/form/PiDoneForm2.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="insert_pi_action"
+			class="com.master.action.TripAction" method="piinsert">
+			<result name="success">/success.jsp</result>
+			<result name="error">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="invoicedetailnew"
+			class="com.master.action.LRmodule.LR_module_Action"
+			method="getcustdetailsnew">
+			<result name="success">/pages/form/getspareprice.jsp</result>
+			<result name="error">/Error.jsp</result>
+		</action>
+
+
+
+
+		<action name="PI_done_Reports1"
+			class="com.master.action.DeliveryDoneAction"
+			method="fetchPIDoneDetails">
+			<result name="success">/pages/form/pidoneReport2.jsp</result>
+			<result name="fail">/pages/form/pidoneReport2.jsp</result>
+		</action>
+
+
+		<action name="PIInvoice"
+			class="com.master.action.Inquiry.Inquiry" method="assignPIInvoice">
+			<result name="success">/pages/form/PIInvoice2.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+
+
+		<action name="InvoicePISubmit"
+			class="com.master.action.Inquiry.Inquiry"
+			method="commonInvoicePISubmit">
+
+			<result name="success">/pages/form/PIPrintWithoutTax2.jsp</result>
+			<result name="already">/already.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="pi_InvoiceReport"
+			class="com.master.action.Dc_action" method="pi_displayInvoiceReport">
+
+			<result name="display">/pages/form/pi_InvoiceReport2.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+
+
+
+
+		<action name="PI_BillView" class="com.master.action.Dc_action"
+			method="pi_billView">
+
+			<!-- <result name="success">/pages/form/invoiceView.jsp</result> <result 
+				name="success1">/pages/form/invoiceIgstView.jsp</result> -->
+			<result name="success2">/pages/form/pi_CommonInvoiceView2.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="pi_BillEdit" class="com.master.action.Dc_action"
+			method="pi_billView">
+
+			<!-- <result name="success">/pages/form/InvoiceEdit.jsp</result> <result 
+				name="success1">/pages/form/invoiceIgstEdit.jsp</result> -->
+			<result name="success2">/pages/form/pi_CommonInvoiceEdit2.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="pi_InvoiceUpdateCommon"
+			class="com.master.action.Inquiry.Inquiry"
+			method="pi_commonInvoiceUpdate">
+			<result name="success">/pages/form/PIPrintWithoutTax2.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="pi_Billprintnew"
+			class="com.master.action.Dc_action" method="pi_billView">
+			<!-- <result name="success">/pages/form/NewPrintInvoiceEdit2.jsp</result> 
+				<result name="success1">/pages/form/NewPrintinvoiceIgstEdit2.jsp</result> -->
+			<result name="success2">/pages/form/PI_NewPrintCommonInvoiceEdit3.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="PI_InvoiceUpdateCommon12"
+			class="com.master.action.Inquiry.Inquiry"
+			method="pi_commonInvoiceUpdate12">
+			<result name="success">/pages/form/PIPrintWithoutTax2.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+
+		<action name="RoleMaster"
+			class="com.accessibility.action.accessibility_action"
+			method="execute">
+
+			<result name="success">/master/RoleMaster.jsp</result>
+
+		</action>
+		<action name="Add_RoleMaster"
+			class="com.accessibility.action.accessibility_action"
+			method="insertRoleMaster">
+
+			<result name="success">/success.jsp</result>
+			<result name="already">/already.jsp</result>
+			<result name="fail">/fail.jsp</result>
+
+		</action>
+
+
+		<action name="RoleMasterReport"
+			class="com.accessibility.action.accessibility_action"
+			method="displayRoleMaster">
+
+			<result name="display">/master/RoleMasterReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+
+		</action>
+
+
+		<action name="Delete_RoleMaster"
+			class="com.accessibility.action.accessibility_action"
+			method="deleteRoleMaster">
+
+			<result name="deleteRoleMaster">/master/RoleMasterReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+
+		</action>
+
+
+		<action name="RoleReport"
+			class="com.accessibility.action.accessibility_action" method="eeeeee">
+
+			<result name="success">/accissibility/RollReport.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="CreateRole"
+			class="com.accessibility.action.accessibility_action"
+			method="execute1">
+			<result name="success">/accissibility/Role.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="RoleAction"
+			class="com.accessibility.action.RoleAction">
+			<result name="success">/success.jsp</result>
+			<result name="error">/fail.jsp</result>
+		</action>
+
+
+		<action name="adduserProductMasterReport"
+			class="com.accessibility.action.accessibility_action"
+			method="adddisplayProductMaster">
+
+			<result name="display">/accissibility/adduserMasterReport2.jsp</result>
+			<result name="fail">/fail.jsp</result>
+
+		</action>
+
+
+		<action name="ChangePass"
+			class="com.accessibility.action.accessibility_action"
+			method="Opennew">
+
+			<result name="success">/accissibility/ChangePass.jsp</result>
+			<result name="error">/fail.jsp</result>
+		</action>
+
+		<action name="ChangePassAction"
+			class="com.accessibility.action.accessibility_action"
+			method="update_user">
+
+			<result name="success">/successPass.jsp</result>
+			<result name="error">/fail.jsp</result>
+		</action>
+
+
+		<action name="NewUser"
+			class="com.accessibility.action.accessibility_action"
+			method="newuser">
+			<result name="success">/accissibility/Newuser.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="NewUserAction" class="com.dao.NewUserAction">
+			<result name="success">/success.jsp</result>
+			<result name="error">/fail.jsp</result>
+		</action>
+
+
+
+		<!--new transporter invoice modul start -->
+
+		<action name="Transporter_done_Reports1"
+			class="com.master.action.DeliveryDoneAction"
+			method="fetchTransporterlrDoneDetails">
+			<result name="success">/pages/form/TransporterdeliverydoneReport2.jsp</result>
+			<result name="fail">/pages/form/TransporterdeliverydoneReport2.jsp</result>
+		</action>
+
+
+
+		<action name="venderbillSubmit"
+			class="com.master.action.DeliveryDoneAction"
+			method="submitvendormbill">
+
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="lr_advanceform"
+			class="com.master.action.TripAction" method="tripIssueForm">
+			<result name="success">/pages/form/Lr_Advance_Form.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<action name="insert_lradvanceform"
+			class="com.master.action.TripAction" method="insertlradvanceform">
+			<result name="success" type="redirect">/success.jsp</result>
+			<result name="insufficient">/insufficient.jsp</result>
+			<result name="error">/fail.jsp</result>
+		</action>
+
+		<action name="Vendor_Bill_Report"
+			class="com.master.action.DeliveryDoneAction"
+			method="vendor_bill_reports">
+			<result name="success">/pages/form/VendorBillFormReport3.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<!-- <action name="VendorPaymentform" class="com.master.action.DeliveryDoneAction" 
+			method="vendor_bill_form"> <result name="success" >/pages/form/VendorPaymentFrrm.jsp</result> 
+			<result name="fail" >/fail.jsp</result> </action> <action name="Transporter_done_Reports1" 
+			class="com.master.action.DeliveryDoneAction" method="fetchTransporterlrDoneDetails"> 
+			<result name="success">/pages/form/TransporterdeliverydoneReport2.jsp</result> 
+			<result name="fail">/pages/form/TransporterdeliverydoneReport2.jsp</result> 
+			</action> -->
+
+
+
+
+		<action name="getbill_amount"
+			class="com.master.action.LRmodule.LR_module_Action"
+			method="getbillamount">
+			<result name="success">/pages/form/getspareprice.jsp</result>
+			<result name="error">/Error.jsp</result>
+		</action>
+
+
+		<action name="venderpaymentSubmit"
+			class="com.master.action.DeliveryDoneAction"
+			method="submitvendormpayment">
+
+			<result name="success">/success.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="vendor_Credit_Advance_Reportv"
+			class="com.master.action.TripAction"
+			method="vendor_Credit_Advance_Reportv">
+			<result name="success">/pages/form/Vendor_Credit_Debit_Report2.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="vendor_Credit_Advance_Report_Submitv"
+			class="com.master.action.TripAction"
+			method="vendor_Credit_Advance_Report_Submitv">
+			<result name="success">/pages/form/Vendor_Credit_Debit_Report2.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="RentalMaster"
+			class="com.master.action.EmployeeMasterAction" method="rentalMaster">
+			<result name="success">/master/rentalMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="rental_master_Reports"
+			class="com.master.action.CustomerMasterAction"
+			method="fetchRentalMasterDetails">
+			<result name="success">/master/rental_master_reports.jsp</result>
+			<result name="fail">/master/rental_master_reports.jsp</result>
+		</action>
+		
+		
+				<action name="UpdateRentalMaster"
+			class="com.master.action.CustomerMasterAction"
+			method="fetchForUpdateCityDetailss">
+			<result name="success">/master/editCityMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+		
+				<action name="Add_New_Rental"
+			class="com.master.action.RentalMasterAction"
+			method="insert_rental_Details">
+			<result name="success">/success.jsp</result>
+			<result name="already">/already.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+		
+		
+		
+				<action name="DeleteRentalMaster"
+			class="com.master.action.CustomerMasterAction"
+			method="deleteRentalMasterDetails">
+			<result name="success">/Delete.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+		<!--new transporter invoice modul End -->
+
+
+	</package>
+</struts>
