@@ -57,32 +57,29 @@ public class RentalMasterDao {
 		System.out.println(rentalmodel.getRental_name() + "rrrrrrrrrrrr");
 		// TODO Auto-generated method stub
 		int i = 0;
-		try {
-			System.out.println("zzzzzzzzzzzzzzz");
-			PreparedStatement psac = conn.prepareStatement(
-					"select * from rental_master where rental_name = '" + rentalmodel.getRental_name() + "'");
-			ResultSet rsac = psac.executeQuery();
-
-			if (rsac.next()) {
-				return -1;
-			}
-			System.out.println("fffffffffffffff");
-			PreparedStatement pst = conn
-					.prepareStatement("insert into `rental_master` (`rental_name`,  `rental_description`) values(?,?)");
-
-			System.out.println(rentalmodel.getRental_name()+"       sssssssssssssssss");
-			System.out.println(rentalmodel.getRental_description()+"    jjjjjjjjjjjjjj");
-			
-			pst.setString(1, rentalmodel.getRental_name());
-			pst.setString(2, rentalmodel.getRental_description());
-			i = pst.executeUpdate();
-
-			System.out.println("i:" + i + "pst:" + pst);
-
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			System.out.println("zzzzzzzzzzzzzzz");
+//			PreparedStatement psac = conn.prepareStatement(
+//					"select * from rental_master where rental_name = '" + rentalmodel.getRental_name() + "'");
+//			ResultSet rsac = psac.executeQuery();
+//
+//			if (rsac.next()) {
+//				return -1;
+//			}
+//			System.out.println("fffffffffffffff");
+//			PreparedStatement pst = conn
+//					.prepareStatement("insert into `rental_master` (`rental_name`,  `rental_description`) values(?,?)");
+//
+//			pst.setString(1, rentalmodel.getRental_name());
+//			pst.setString(2, rentalmodel.getRental_description());
+//			i = pst.executeUpdate();
+//
+//			System.out.println("i: " + i + "\npst: " + pst);
+//
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		return i;
 	}
 
