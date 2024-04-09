@@ -122,31 +122,11 @@ public class CustomerMasterAction extends ActionSupport implements ModelDriven {
 	private List<CustomerMasterModel> fetchCustomerDetails;
 
 	private List<CityModel> fetchCityDetails;
-	
-	private List <RentalModel> fetchRetalDetails;
 
 	private List<DriverModel> fetchDriverDetails;
 
 	private List<VehicleModel> fetchVehicleDetails;
 	
-	
-	
-
-	public RentalModel getRental_model() {
-		return rental_model;
-	}
-
-	public void setRental_model(RentalModel rental_model) {
-		this.rental_model = rental_model;
-	}
-
-	public List<RentalModel> getFetchRetalDetails() {
-		return fetchRetalDetails;
-	}
-
-	public void setFetchRetalDetails(List<RentalModel> fetchRetalDetails) {
-		this.fetchRetalDetails = fetchRetalDetails;
-	}
 
 	public List<RentalModel> getRentalMasterDetails() {
 		return rentalMasterDetails;
@@ -561,23 +541,7 @@ public class CustomerMasterAction extends ActionSupport implements ModelDriven {
 	
 	
 	
-	public String fetchForUpdateRentalDetailss() {
-		String response;
-		HttpServletRequest request = ServletActionContext.getRequest();
-		String rental_id = request.getParameter("rental_id");
 
-		fetchRetalDetails = new RentalMasterDao().fetchForUpdateRentalDetailss(rental_model, rental_id);
-
-		System.out.println(fetchRetalDetails.size());
-
-		if (fetchCityDetails.size() > 0) {
-			response = "success";
-		} else {
-			response = "fail";
-		}
-
-		return response;
-	}
 
 	public String fetchForUpdateRouteDetailss() {
 		String response;
@@ -791,22 +755,7 @@ public class CustomerMasterAction extends ActionSupport implements ModelDriven {
 	
 	
 	
-	public String deleteRentalMasterDetails() {
-		String response;
-		HttpServletRequest request = ServletActionContext.getRequest();
-		String delete_rental_id = request.getParameter("rental_id");
 
-		int i = new RentalMasterDao().delete_rental_master(rental_model, delete_rental_id);
-		if (i > 0) {
-			response = "success";
-		} else {
-			response = "fail";
-		}
-
-		return response;
-	}
-	
-	
 
 	public String deleteRouteMasterDetails() {
 		String response;

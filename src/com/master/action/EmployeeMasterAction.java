@@ -329,12 +329,6 @@ public class EmployeeMasterAction extends ActionSupport implements ModelDriven{
 		return "success";
 	}
 	
-	
-	
-	public String rentalMaster() {
-		return "success";
-	}
-	
 	public String routeMaster() {
 		return "success";
 	}

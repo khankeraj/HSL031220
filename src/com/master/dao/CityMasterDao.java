@@ -22,11 +22,11 @@ public class CityMasterDao {
 	
 public int insert_city_Details(CityModel citymodel) {
 	
-	System.out.println(citymodel.getCity_name()+"rrrrrrrrrrrrrrrr");
+	System.out.println(citymodel.getState_name()+"pppppppppppppp");
 		// TODO Auto-generated method stub
 		int i=0;
 		try {
-						
+			System.out.println(citymodel.getState_name()+"jjjjjjjjjjjjj");			
 			PreparedStatement psac = conn.prepareStatement("select * from city_master where city_name = '"+citymodel.getCity_name()+"'");
 			ResultSet rsac = psac.executeQuery();
 			
@@ -36,6 +36,10 @@ public int insert_city_Details(CityModel citymodel) {
 			}
 			
 			PreparedStatement pst = conn.prepareStatement("insert into `city_master` (`city_name`,  `state_name`) values(?,?)");
+			
+			
+			System.out.println(citymodel.getCity_name()+"rrrrrrrrrrrrrrrr");
+			System.out.println(citymodel.getState_name()+"pppppppppppppp");
 			pst.setString(1, citymodel.getCity_name());
 			pst.setString(2, citymodel.getState_name());
 			i=pst.executeUpdate();
@@ -48,8 +52,6 @@ public int insert_city_Details(CityModel citymodel) {
 		}
 		return i;
 	}
-
-
 
 
 
@@ -165,6 +167,9 @@ public int deleteCity_master(CityModel city_modal, String delete_city_id) {
 	}
 	return i;
 }
+
+
+
 public List<CityModel> fetchForUpdateRouteDetailss(CityModel city_modal, String route_id) {
 	// TODO Auto-generated method stub
 List<CityModel> list=new ArrayList<CityModel>();
@@ -225,6 +230,8 @@ public int update_city_details(CityModel city_modal, String update_city) {
 	}
 	return i;
 }
+
+
 public List<RateMasterModel> fetchRateMasterDetails(RateMasterModel rate_modal) {
 	// TODO Auto-generated method stub
 

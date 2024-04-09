@@ -4589,7 +4589,7 @@
 
 
 		<action name="RentalMaster"
-			class="com.master.action.EmployeeMasterAction" method="rentalMaster">
+			class="com.master.action.RentalMasterAction" method="rentalMaster">
 			<result name="success">/master/rentalMaster.jsp</result>
 			<result name="fail">/fail.jsp</result>
 		</action>
@@ -4603,13 +4603,6 @@
 		</action>
 		
 		
-				<action name="UpdateRentalMaster"
-			class="com.master.action.CustomerMasterAction"
-			method="fetchForUpdateCityDetailss">
-			<result name="success">/master/editCityMaster.jsp</result>
-			<result name="fail">/fail.jsp</result>
-		</action>
-		
 				<action name="Add_New_Rental"
 			class="com.master.action.RentalMasterAction"
 			method="insert_rental_Details">
@@ -4619,14 +4612,30 @@
 		</action>
 		
 		
+				<action name="UpdateRentalMaster"
+			class="com.master.action.RentalMasterAction"
+			method="fetchForUpdateRentalDetailss">
+			<result name="success">/master/editRentalMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
 		
-				<action name="DeleteRentalMaster"
-			class="com.master.action.CustomerMasterAction"
+		
+		
+				<action name="update_rental_master_details"
+			class="com.master.action.RentalMasterAction"
+			method="update_rental_details">
+			<result name="success">/update.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+
+		<action name="DeleteRentalMaster"
+			class="com.master.action.RentalMasterAction"
 			method="deleteRentalMasterDetails">
 			<result name="success">/Delete.jsp</result>
 			<result name="fail">/fail.jsp</result>
 		</action>
-
 		<!--new transporter invoice modul End -->
 
 

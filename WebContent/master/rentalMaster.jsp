@@ -1,19 +1,24 @@
-<%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
-<link href="configure/plugins/bootstrap-datepicker/bootstrap-datepicker.css" rel="stylesheet">
+<link
+	href="configure/plugins/bootstrap-datepicker/bootstrap-datepicker.css"
+	rel="stylesheet">
 <script src="Css/jquery-1.10.2.js" type="text/javascript"></script>
- <!-- AutoSearch -->
-  <link rel="stylesheet" type="text/css" href="Css/styleAS.css" />
-  <script src="js/jquery-migrate-1.2.1.js" type="text/javascript"></script>
-  <link rel="stylesheet" type="text/css" media="all" href="Css/AutoSearch/styleAS.css" />
-  <script src="jQuery_4_design/AutoSearch/AutoSearchJquerySale.js" type="text/javascript"></script>
-  <script src="js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
-  <!-- AutoSearch -->
-	
-	<%-- <script>
+<!-- AutoSearch -->
+<link rel="stylesheet" type="text/css" href="Css/styleAS.css" />
+<script src="js/jquery-migrate-1.2.1.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" media="all"
+	href="Css/AutoSearch/styleAS.css" />
+<script src="jQuery_4_design/AutoSearch/AutoSearchJquerySale.js"
+	type="text/javascript"></script>
+<script src="js/jquery.validationEngine.js" type="text/javascript"
+	charset="utf-8"></script>
+<!-- AutoSearch -->
+
+<%-- <script>
 	$(function() {
 		 $("#bank_name").autocomplete("GoogleSearch/bankName.jsp");
 	});
@@ -34,7 +39,7 @@
 					<h1 class="page-header text-overflow">Rental Master</h1>
 				</div>
 				<!--End page title-->
-				
+
 				<!--Breadcrumb-->
 				<ol class="breadcrumb">
 					<li><a href="#">Office</a></li>
@@ -45,39 +50,32 @@
 
 				<!--Page content-->
 				<div id="page-content">
-						<div class="row">
+					<div class="row">
 						<div class="col-lg-12">
 							<div class="panel">
 								<div class="panel-heading">
 									<h3 class="panel-title"></h3>
 								</div>
-								
-							<form action="Add_New_Rental" method="POST">
-								<div class="panel-body">
-								      <div class="row">
+
+								<form action="Add_New_Rental" method="POST">
+									<div class="panel-body">
+										<div class="row">
 											<div class="col-sm-6">
 												<div class="form-group">
-													<label class="control-label">Rental Name:</label>
-													<input type="text" class="form-control" placeholder="" name="rental_name"    class="form-control" required>
+													<label class="control-label">Rental Name:</label> <input
+														type="text" class="form-control" placeholder="" name="rental_name" class="form-control" required>
 												</div>
 											</div>
-											
+
 											<div class="col-sm-6">
 												<div class="form-group">
-													<label class="control-label">Rental Description:</label>
-													<input type="text" class="form-control" placeholder="" name="rental_description"    class="form-control" required>
+													<label class="control-label">Rental Description:</label> <input
+														type="text" class="form-control" placeholder="" name="rental_description" class="form-control" required>
 												</div>
 											</div>
-									  </div>
-									  
-									  
-									  
-										
-										
-										
-										
-										
-										
+										</div>
+									</div>
+
 										<div class="panel-footer" >
 										<div class="row">
 											<div class="col-sm-9 col-sm-offset-3">
@@ -87,7 +85,6 @@
 											</div>
 										</div>
 								     </div>
-									</div>
 								</form>
 							</div>
 						</div>
@@ -96,49 +93,47 @@
 				<!--End page content-->
 			</div>
 			<!--END CONTENT CONTAINER-->
-			
+
 			<!--MAIN NAVIGATION-->
 			<nav id="mainnav-container">
-				<div id="mainnav">
-					<!--Shortcut buttons-->
-					<div id="mainnav-shortcut">
-						<ul class="list-unstyled">
-							<li class="col-xs-4" data-content="Additional Sidebar">
-								<a id="demo-toggle-aside" class="shortcut-grid" href="#">
-									<i class="fa fa-magic"></i>
-								</a>
-							</li>
-							<li class="col-xs-4" data-content="Notification">
-								<a id="demo-alert" class="shortcut-grid" href="#">
-									<i class="fa fa-bullhorn"></i>
-								</a>
-							</li>
-							<li class="col-xs-4" data-content="Page Alerts">
-								<a id="demo-page-alert" class="shortcut-grid" href="#">
-									<i class="fa fa-bell"></i>
-								</a>
-							</li>
-						</ul>
-					</div>
-					<!--End shortcut buttons-->
-
-					<!--Menu-->
-					<jsp:include page="/common/leftsidebar.jsp"></jsp:include>
-					<!--End menu-->
+			<div id="mainnav">
+				<!--Shortcut buttons-->
+				<div id="mainnav-shortcut">
+					<ul class="list-unstyled">
+						<li class="col-xs-4" data-content="Additional Sidebar"><a
+							id="demo-toggle-aside" class="shortcut-grid" href="#"> <i
+								class="fa fa-magic"></i>
+						</a></li>
+						<li class="col-xs-4" data-content="Notification"><a
+							id="demo-alert" class="shortcut-grid" href="#"> <i
+								class="fa fa-bullhorn"></i>
+						</a></li>
+						<li class="col-xs-4" data-content="Page Alerts"><a
+							id="demo-page-alert" class="shortcut-grid" href="#"> <i
+								class="fa fa-bell"></i>
+						</a></li>
+					</ul>
 				</div>
+				<!--End shortcut buttons-->
+
+				<!--Menu-->
+				<jsp:include page="/common/leftsidebar.jsp"></jsp:include>
+				<!--End menu-->
+			</div>
 			</nav>
 			<!--END MAIN NAVIGATION-->
 		</div>
-		
+
 		<!-- FOOTER -->
 		<jsp:include page="/common/footer.jsp"></jsp:include>
 		<!-- END FOOTER -->
 	</div>
 	<!-- END OF CONTAINER -->
-	
+
 	<!-- SETTINGS - DEMO PURPOSE ONLY -->
 	<jsp:include page="/common/settingsForGrid.jsp"></jsp:include>
 	<!-- END SETTINGS -->
-	<script src="configure/plugins/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+	<script
+		src="configure/plugins/bootstrap-datepicker/bootstrap-datepicker.js"></script>
 </body>
 </html>
