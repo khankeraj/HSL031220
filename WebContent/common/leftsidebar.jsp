@@ -153,6 +153,8 @@
 											<li><a href="customer_master_Reports"><img alt="" height="15px;" src="configure/img/specialist-user.svg">&nbsp;<font style="font-weight: 600;">Customer Master</font></a></li>
 											<li><a href="city_master_Reports"><img alt="" height="15px;" src="configure/img/icons8-building-50.png">&nbsp;<font style="font-weight: 600;">City Master</a></li>
 											<li><a href="rental_master_Reports"><img alt="" height="15px;" src="configure/img/icons8-box-50.png">&nbsp;<font style="font-weight: 600;">Rental Master</a></li>
+											
+											<li><a href="student_master_Reports"><img alt="" height="15px;" src="configure/img/specialist-user.svg">&nbsp;<font style="font-weight: 600;">Student Master</font></a></li>
 											<li><a href="route_master_Reports"><img alt="" height="15px;" src="configure/img/icons8-route-50.png">&nbsp;<font style="font-weight: 600;">Route Master</a></li>
 											<li><a href="product_master_Reports"><img alt="" height="15px;" src="configure/img/icons8-box-50.png">&nbsp;<font style="font-weight: 600;">Product Master</a></li>
 											<li><a href="driver_master_Reports"><img alt="" height="15px;" src="configure/img/driver1.png">&nbsp;<font style="font-weight: 600;">Driver Master</a></li>
@@ -167,7 +169,7 @@
 											<li><a href="ResourceTypeMasterReport"><img alt="" height="15px;" src="configure/img/icons8-user-location-50.png">&nbsp;<font style="font-weight: 600;">Resource Master</a></li>
 											
 											<li><a href="ReasonTypeMasterReport"><img alt="" height="15px;" src="configure/img/icons8-user-location-50.png">&nbsp;<font style="font-weight: 600;">Reason Master</a></li>
-																						<li><a href="rate_master_Reports"><img alt="" height="15px;" src="configure/img/icons8-user-location-50.png">&nbsp;<font style="font-weight: 600;">Rate Master</a></li>
+											<li><a href="rate_master_Reports"><img alt="" height="15px;" src="configure/img/icons8-user-location-50.png">&nbsp;<font style="font-weight: 600;">Rate Master</a></li>
 											
 											
 										</ul>

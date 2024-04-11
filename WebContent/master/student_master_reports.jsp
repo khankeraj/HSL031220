@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
  	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel="stylesheet">
@@ -16,10 +17,10 @@
 	<link href="configure/plugins/pace/pace.min.css" rel="stylesheet">
 	<script src="configure/plugins/pace/pace.min.js"></script>
 	
- 	<script>
-		function deleteFun(city_id){
-			//alert(city_id);
-			var link = "DeleteRentalMaster?rental_id="+rental_id;
+	<script>
+		function deleteFun(student_id){
+			//alert(student_id);
+			var link = "DeleteStudentMaster?student_id="+student_id;
 			
 			deleteOk = confirm('Are you sure you want to delete?');
 			
@@ -30,8 +31,7 @@
 			
 		}
 	
-		</script> 
-	
+	</script>
 	
 </head>
 <body>
@@ -40,50 +40,60 @@
 		<div class="boxed">
 			<div id="content-container">
 				<div id="page-title">
-					
+					<!-- <button>Add New</button> -->
 				</div>
 				<div id="page-content">
 					<div class="panel">
 					<br>
-					<a href="RentalMaster"><button style="margin-left: 20px; height: 30px; width: 100px;">Add Rental</button></a>
-					
+					<a href="student_master"><button style="margin-left: 20px; height: 30px; width: 100px;">Add Student</button></a>
+					<!-- <button class="btn btn-success btn-labeled fa fa-check fa-lg" style="margin-left: 10px" type="submit" >Submit</button> -->
 						<div class="panel-heading">
-							<h3 class="panel-title">Rental Master Report</h3>
+							
+							<h3 class="panel-title">Student Report</h3>
 						</div>
-						<div class="panel-body">
+						<div class="panel-body" style="overflow-x:auto;">
 							<table id="demo-dt-basic" class="table table-striped table-bordered" cellspacing="0" width="100%">
 								<thead>
 									<tr>
 										<th>Sr.No</th>
-										<th>Rental Name</th>
-										<th>Rental Description</th>
+										<th>Name</th>
+										<th>Address</th>
+										<th>City</th>
+										<th>Mobile</th>
+										<th>Email</th>
+										<th>Department</th>
+										<th>Gender</th>
+										<th>Language</th>
+										
 										<th>Edit</th>
 										<th>Delete</th>
-
 									</tr>
 								</thead>
 								
 								<tbody>
 								 <%int i=1; %>
-								 <c:forEach items="${rentalMasterDetails}" var="rentalMasterDetails">
+								 <c:forEach items="${studentMasterDetails}" var="studentMasterDetails">
 									<tr>
 										<td><%=i++ %></td>
-										<td><c:out value="${rentalMasterDetails.rental_name}" /></td>
-										<td><c:out value="${rentalMasterDetails.rental_description}" /></td>
-
-									<td align="center"><a style="text-decoration: none;color: green;" title="Update" href="UpdateRentalMaster?rental_id=<c:out value="${rentalMasterDetails.rental_id}" />">
+										<td><c:out value="${studentMasterDetails.name}" /></td>
+										<td><c:out value="${studentMasterDetails.address}" /></td>
+										<td><c:out value="${studentMasterDetails.city}" /></td>
+										<td><c:out value="${studentMasterDetails.mobile}" /></td>
+										<td><c:out value="${studentMasterDetails.email}" /></td>
+										<td><c:out value="${studentMasterDetails.department}" /></td>
+										<td><c:out value="${studentMasterDetails.gender}" /></td>
+										<td><c:out value="${studentMasterDetails.language}" /></td>
+						
+										<td align="center"><a style="text-decoration: none;color: green;" title="Update" href="UpdateStudentMaster?student_id=<c:out value="${studentMasterDetails.student_id}" />">
 											<img alt="Update" src="configure/img/pencil.png"></a>
 									   </td>
-									   
-								  	<td align="center"><a style="text-decoration: none;color: red;" title="Delete" href="DeleteRentalMaster?rental_id=<c:out value="${rentalMasterDetails.rental_id}" />">
+										<%-- <td align="center"><a style="text-decoration: none;color: red;" title="Delete" href="DeleteCustomerMaster?customer_id=<c:out value="${customerMasterDetails.customer_id}" />">
 											<img alt="" height="20px;" src="configure/img/recycle-bin.svg"></a>
-								
-									<%--    <td align="center"><a style="text-decoration: none;color: red;" title="Delete" >
-											<img alt="" height="20px;" src="configure/img/recycle-bin.svg" onclick="deleteFun(<c:out value="${rentalMasterDetails.rental_id}" />);"></a>
-											
-									   </td>  --%>
-									
+									   </td> --%>
 									   
+									   <td align="center"><a style="text-decoration: none;color: red;" title="Delete" >
+											<img alt="" height="20px;" src="configure/img/recycle-bin.svg" onclick="deleteFun(<c:out value="${studentMasterDetails.student_id}" />);"></a>
+									   </td>
 									</tr>
 								 </c:forEach>
 								</tbody>

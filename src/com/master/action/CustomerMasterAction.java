@@ -306,6 +306,8 @@ public class CustomerMasterAction extends ActionSupport implements ModelDriven {
 
 		return response;
 	}
+	
+	
 
 	public String fetchCustomerMasterDetails() {
 		String response;
@@ -319,6 +321,8 @@ public class CustomerMasterAction extends ActionSupport implements ModelDriven {
 		return response;
 	}
 
+	
+	
 	public String fetchCustDetails() {
 		Map session = ActionContext.getContext().getSession();
 		userinfo bean = new userinfo();
@@ -503,6 +507,7 @@ public class CustomerMasterAction extends ActionSupport implements ModelDriven {
 		return response;
 	}
 
+	
 	public String fetchForUpdateVehicleDetailss() {
 		String response;
 		HttpServletRequest request = ServletActionContext.getRequest();
@@ -521,6 +526,7 @@ public class CustomerMasterAction extends ActionSupport implements ModelDriven {
 		return response;
 	}
 
+	
 	public String fetchForUpdateCityDetailss() {
 		String response;
 		HttpServletRequest request = ServletActionContext.getRequest();

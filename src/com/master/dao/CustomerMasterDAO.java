@@ -202,6 +202,7 @@ public String fetchCustDetails(String name) {
 		return i;
 	}
 
+
 	public List<CustomerMasterModel> fetchForUpdateCustomerDetailss(CustomerMasterModel customer_modal,
 			String customer_id) {
 		// TODO Auto-generated method stub

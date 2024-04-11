@@ -4586,7 +4586,7 @@
 			<result name="fail">/fail.jsp</result>
 		</action>
 
-
+		<!--new transporter invoice modul End -->
 
 		<action name="RentalMaster"
 			class="com.master.action.RentalMasterAction" method="rentalMaster">
@@ -4636,8 +4636,53 @@
 			<result name="success">/Delete.jsp</result>
 			<result name="fail">/fail.jsp</result>
 		</action>
-		<!--new transporter invoice modul End -->
 
+				<!--new Rental model End -->
+		
+				<action name="student_master"
+			class="com.master.action.StudentMasterAction"
+			method="studentMaster">
+			<result name="success">/master/student_master.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+		
+		
+			<action name="student_master_insert"
+			class="com.master.action.StudentMasterAction"
+			method="insert_student_master_details">
+			<result name="success">/success.jsp</result>
+			<result name="already">/already.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+
+		<action name="student_master_Reports"
+			class="com.master.action.StudentMasterAction"
+			method="fetchStudentMasterDetails">
+			<result name="success">/master/student_master_reports.jsp</result>
+			<result name="fail">/master/student_master_reports.jsp</result>
+		</action>
+
+		<action name="DeleteStudentMaster"
+			class="com.master.action.StudentMasterAction"
+			method="deleteStudentMasterDetails">
+			<result name="success">/Delete.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+	
+		<action name="UpdateStudentMaster"
+			class="com.master.action.StudentMasterAction"
+			method="fetchForUpdateStudentDetails">
+			<result name="success">/master/editStudentMaster.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+
+	<action name="update_student_master_details"
+			class="com.master.action.StudentMasterAction"
+			method="update_student_details">
+			<result name="success">/update.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
 
 	</package>
 </struts>

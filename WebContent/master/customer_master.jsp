@@ -49,11 +49,8 @@
 												        		{
 												        		alert( "Please provide a valid Mobile No" );
 												        		/* v.focus() ; */
-
-												        		
+	
 												        		}
-												        
-												  
 												}
 												
 												
